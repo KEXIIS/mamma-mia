@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Trattoria Mamma Mia — włoska restauracja i pizzeria, Karmelicka 14, Kraków</title>
+  <meta name="description" content="Włoska trattoria i wine bar przy Karmelickiej 14 w Krakowie, pięć minut od Rynku. Pizza z pieca, świeża pasta, lasagne, karta win. Menu z cenami, godziny otwarcia i rezerwacja stolika online.">
+
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="Trattoria Mamma Mia — Karmelicka 14, Kraków">
+  <meta property="og:description" content="Pizza z pieca, świeża pasta i karta win w sercu Krakowa. Menu, godziny i rezerwacja online.">
+  <meta property="og:image" content="images/wnetrze-1.webp">
+  <meta property="og:locale" content="pl_PL">
+
+  <link rel="icon" href="images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Petrona:ital,wght@0,400;0,600;1,400;1,600&family=Yellowtail&display=swap" rel="stylesheet">
+
+  <!-- ?v= wymusza pobranie nowej wersji po aktualizacji strony.
+       Przy każdym wdrożeniu zmian w css/ lub js/ podnieś numer. -->
+  <link rel="stylesheet" href="css/style.css?v=43">
+
+  <!-- Ustawiane przed pierwszym malowaniem: bez tej klasy CSS pokazuje
+       wszystkie panele menu naraz (tryb bez JavaScriptu). -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <a class="visually-hidden" href="#menu" data-en="Skip to menu">Przejdź do menu</a>
+
+  <!-- ===================== NAGŁÓWEK ===================== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+
+      <a class="site-header__brand" href="#gora">
+        <img class="site-header__seal" src="images/logo.png?v=3" alt="" width="340" height="340">
+        <span class="site-header__wordmark"><span class="site-header__trattoria">Trattoria</span> Mamma Mia</span>
+      </a>
+
+      <div class="site-header__lead">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+          <span class="nav-toggle__label" data-en="Menu">Nawigacja</span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Nawigacja główna">
+          <a href="#o-nas" data-en="About">O nas</a>
+          <a href="#menu" data-en="Menu">Menu</a>
+          <a href="#galeria" data-en="Gallery">Galeria</a>
+          <a href="#taras" data-en="Terrace">Taras</a>
+          <a href="#kontakt" data-en="Contact">Kontakt</a>
+          <!-- Widoczny tylko na telefonie, gdzie przycisk rezerwacji
+               nie mieści się w pasku nagłówka. -->
+          <a class="site-nav__cta"
+             href="https://www.covermanager.com/reservation/module_restaurant/restaurante-mammamia/polish"
+             data-href-en="https://www.covermanager.com/reservation/module_restaurant/restaurante-mammamia/english"
+             target="_blank" rel="noopener"
+             data-en="Book a table">Rezerwuj stolik</a>
+        </nav>
+
+      </div>
+
+      <span class="site-header__spacer" aria-hidden="true"></span>
+
+
+      <div class="site-header__actions">
+        <div class="lang-switch" role="group" aria-label="Wybór języka">
+          <button type="button" data-lang="pl" aria-pressed="true">PL</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="button button--primary"
+           id="rezerwacja-gora"
+           href="https://www.covermanager.com/reservation/module_restaurant/restaurante-mammamia/polish"
+           data-href-en="https://www.covermanager.com/reservation/module_restaurant/restaurante-mammamia/english"
+           target="_blank" rel="noopener"
+           data-en="Book a table">Rezerwuj stolik</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="gora">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+
+      <div class="hero__wedge">
+        <p class="hero__script" aria-hidden="true">Mamma Mia</p>
+
+        <h1 class="display hero__title">
+          <span data-en="Italy.">Włochy.</span>
+          <span class="hero__line-2">Karmelicka 14.</span>
+        </h1>
+
+        <p class="hero__lead" data-en="A trattoria and wine bar five minutes from the Main Square. Wood-fired pizza, pasta made to order, and a wine list that stretches from Veneto to a Polish vineyard in Lanckorona.">
+          Trattoria i wine bar pięć minut od Rynku. Pizza z pieca, makaron robiony na zamówienie
+          i karta win, która sięga od Veneto po polską winnicę w Lanckoronie.
+        </p>
+
+        <p style="margin:0">
+          <a class="button button--ghost"
+             href="https://www.covermanager.com/reservation/module_restaurant/restaurante-mammamia/polish"
+             data-href-en="https://www.covermanager.com/reservation/module_restaurant/restaurante-mammamia/english"
+             target="_blank" rel="noopener"
+             data-en="Book a table">Rezerwuj stolik</a>
+        </p>
+      </div>
+
+      <figure class="hero__photo">
+
+        <img src="images/wnetrze-1.webp"
+             alt="Wnętrze Trattorii Mamma Mia — stolik przy oliwkowej boazerii, gięte krzesła i lodówka na wino"
+             width="938" height="310" fetchpriority="high">
+
+        <p class="sticker">
+          <span class="sticker__score">4,4</span>
+          <span class="sticker__label" data-en="8150 Google reviews">8150 opinii Google</span>
+        </p>
+      </figure>
+
+    </section>
+
+    <div class="stripe-band" aria-hidden="true"></div>
+
+    <!-- ===================== STEMPLE ===================== -->
+    <section class="section section--olive">
+      <div class="container">
+        <ul class="stamps">
+          <li class="stamp">
+            <span class="stamp__ring" aria-hidden="true">★</span>
+            <span class="stamp__text" data-en="4.4 out of 5 from 8150 Google reviews">4,4 na 5 z 8150 opinii Google</span>
+          </li>
+          <li class="stamp">
+            <span class="stamp__ring" aria-hidden="true">✦</span>
+            <span class="stamp__text" data-en="Karmelicka 14 — five minutes from the Main Square">Karmelicka 14 — pięć minut od Rynku</span>
+          </li>
+          <li class="stamp">
+            <span class="stamp__ring" aria-hidden="true">✿</span>
+            <span class="stamp__text" data-en="Small terrace under fairy lights">Mały taras pod lampkami</span>
+          </li>
+          <li class="stamp">
+            <span class="stamp__ring" aria-hidden="true">☾</span>
+            <span class="stamp__text" data-en="Everything fresh, cooked to order">Wszystko świeże, na zamówienie</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="stripe-band" aria-hidden="true"></div>
+
+    <!-- ===================== O NAS ===================== -->
+    <section class="section" id="o-nas">
+      <div class="container about__grid">
+
+        <div class="about__media">
+          <img src="images/stol.webp"
+               alt="Zastawiony stół — tuńczyk, zapiekanka i drinki, ręce gości sięgające po dania"
+               width="549" height="823" loading="lazy">
+        </div>
+
+        <div class="about__body">
+          <p class="section__eyebrow" data-en="About us">O nas</p>
+          <h2 class="section__title" data-en="A trattoria, not a chain">Trattoria, nie sieciówka</h2>
+
+          <p data-en="Mamma Mia sits on Karmelicka, a few minutes' walk from the Main Square. Inside it is warm and close-packed; outside there is a small courtyard terrace strung with lights that fills up first on summer evenings.">
+            Mamma Mia stoi przy Karmelickiej, kilka minut spacerem od Rynku. W środku jest ciepło
+            i gęsto od stolików, a na zewnątrz mały dziedziniec obwieszony lampkami, który latem
+            zapełnia się pierwszy.
+          </p>
+
+          <p data-en="We belong to a small, independent group of Cracow restaurants — alongside La Campana and Kogel-Mogel. No franchise, no central kitchen. The pizza comes out of a wood-fired oven, the pasta is made to order, and the wait is about forty-five minutes because nothing sits waiting under a lamp.">
+            Należymy do małej, niezależnej krakowskiej grupy restauracji — obok La Campany
+            i Kogla-Mogla. Bez franczyzy i bez kuchni centralnej. Pizza wychodzi z pieca,
+            makaron robimy na zamówienie, a na danie czeka się około czterdziestu pięciu minut,
+            bo nic nie stoi pod lampą.
+          </p>
+
+          <blockquote class="pull-quote" lang="en">
+            Believe the hype. The food here is insane. You have to try the lasagne.
+            <footer data-en="Google review">Opinia w Google</footer>
+          </blockquote>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== PASMO ===================== -->
+    <figure class="band">
+      <img src="images/wnetrze-2.webp"
+           alt="Sala restauracji z kwiecistą tapetą, drewnianymi stolikami i regałem z winem"
+           width="938" height="310" loading="lazy">
+      <p class="band__label" data-en="Straight from the oven">Prosto z pieca</p>
+    </figure>
+
+    <!-- ===================== MENU ===================== -->
+    <section class="section section--alt" id="menu">
+      <div class="container">
+
+        <p class="section__eyebrow" data-en="The menu">Karta</p>
+        <h2 class="section__title" data-en="What we cook">Co gotujemy</h2>
+        <p class="lead" style="margin-bottom:2.5rem" data-en="Every dish is listed with its Polish and English description, weight and price. Prices in Polish złoty.">
+          Każde danie z opisem po polsku i angielsku, gramaturą i ceną. Ceny w złotych.
+        </p>
+
+<!-- ============ POCZĄTEK BLOKU MENU ============
+     Pozycje wpisane na stałe w HTML, żeby były widoczne dla wyszukiwarek
+     i czytelne przy wyłączonym JavaScripcie. Edycja cen — tutaj. -->
+        <ul class="menu__tabs" role="tablist">
+          <li role="presentation"><button class="menu__tab" type="button" role="tab" id="tab-antipasti" aria-controls="panel-antipasti" aria-selected="false">Antipasti</button></li>
+          <li role="presentation"><button class="menu__tab" type="button" role="tab" id="tab-zuppe" aria-controls="panel-zuppe" aria-selected="false">Zuppe</button></li>
+          <li role="presentation"><button class="menu__tab" type="button" role="tab" id="tab-focaccia" aria-controls="panel-focaccia" aria-selected="false">Focaccia</button></li>
+          <li role="presentation"><button class="menu__tab" type="button" role="tab" id="tab-insalate" aria-controls="panel-insalate" aria-selected="false">Insalate</button></li>
+          <li role="presentation"><button class="menu__tab" type="button" role="tab" id="tab-pizza" aria-controls="panel-pizza" aria-selected="false">Pizza</button></li>
+          <li role="presentation"><button class="menu__tab" type="button" role="tab" id="tab-pasta" aria-controls="panel-pasta" aria-selected="false">Pasta e risotto</button></li>
+          <li role="presentation"><button class="menu__tab" type="button" role="tab" id="tab-pesce" aria-controls="panel-pesce" aria-selected="false">Pesce</button></li>
+          <li role="presentation"><button class="menu__tab" type="button" role="tab" id="tab-carne" aria-controls="panel-carne" aria-selected="false">Carne</button></li>
+          <li role="presentation"><button class="menu__tab" type="button" role="tab" id="tab-contorni" aria-controls="panel-contorni" aria-selected="false">Contorni</button></li>
+          <li role="presentation"><button class="menu__tab" type="button" role="tab" id="tab-dolci" aria-controls="panel-dolci" aria-selected="false">Dolci</button></li>
+          <li role="presentation"><button class="menu__tab" type="button" role="tab" id="tab-napoje" aria-controls="panel-napoje" aria-selected="false" data-en="Drinks">Napoje</button></li>
+        </ul>
+        <section class="menu__panel" id="panel-antipasti" role="tabpanel" aria-labelledby="tab-antipasti">
+          <h3 class="menu__panel-title">Antipasti</h3>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Bruschetta con Prosciutto di Parma</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">220 g</span> 32 zł</span>
+              </p>
+              <p class="dish__desc">Grzanki z szynką parmeńską, Grana Padano i serem ricotta</p>
+              <p class="dish__desc dish__desc--en" lang="en">Toasted bread with Parma ham, Grana Padano and ricotta cheese</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Burrata</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">140 g</span> 38 zł</span>
+              </p>
+              <p class="dish__desc">Mozzarella burrata z rukolą i pomidorkami koktajlowymi</p>
+              <p class="dish__desc dish__desc--en" lang="en">Mozzarella burrata with rocket salad and cherry tomatoes</p>
+               <p class="dish__tags"><span class="tag tag--chef" data-en="Chef&#x27;s choice">Polecane przez szefa</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Carpaccio di filetto di manzo marinato con olive</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">120 g</span> 48 zł</span>
+              </p>
+              <p class="dish__desc">Carpaccio z marynowanej polędwicy wołowej z majonezem worcestershire, rukolą i Grana Padano</p>
+              <p class="dish__desc dish__desc--en" lang="en">Beef loin carpaccio served with worcestershire mayonnaise, rocket salad and Grana Padano</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Tartare di tonno</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">90 / 130 g</span> 48 zł</span>
+              </p>
+              <p class="dish__desc">Tatar z tuńczyka z czerwoną cebulą, sosem sriracha i szczypiorkiem</p>
+              <p class="dish__desc dish__desc--en" lang="en">Tuna tartare with red onion, sriracha and fresh chives</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Gamberetti stufati in salsa di vino bianco</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">150 g</span> 52 zł</span>
+              </p>
+              <p class="dish__desc">Krewetki argentyńskie duszone w sosie z białego wina z czosnkiem, podane z pieczonymi pomidorkami koktajlowymi</p>
+              <p class="dish__desc dish__desc--en" lang="en">Argentinian prawns stewed in white wine sauce with garlic, served with roasted cherry tomatoes</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Un piatto di formaggi e salumi</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">220 g</span> 68 zł</span>
+              </p>
+              <p class="dish__desc">Talerz serów, wędlin lub mieszany</p>
+              <p class="dish__desc dish__desc--en" lang="en">Italian charcuterie or cheese plate</p>
+            </li>
+          </ul>
+        </section>
+        <section class="menu__panel" id="panel-zuppe" role="tabpanel" aria-labelledby="tab-zuppe">
+          <h3 class="menu__panel-title">Zuppe</h3>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Krem pomidorowy</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">250 g</span> 26 zł</span>
+              </p>
+              <p class="dish__desc">Krem pomidorowo-paprykowy z mozzarellą i pesto bazyliowym</p>
+              <p class="dish__desc dish__desc--en" lang="en">Tomato and bell pepper cream soup with mozzarella and basil pesto</p>
+               <p class="dish__tags"><span class="tag" data-en="Vegetarian">Wegetariańskie</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Zuppa di zucca</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">250 g</span> 26 zł</span>
+              </p>
+              <p class="dish__desc">Zupa dyniowa, płatki migdałów</p>
+              <p class="dish__desc dish__desc--en" lang="en">Pumpkin soup, almond flakes</p>
+               <p class="dish__tags"><span class="tag" data-en="Vegetarian">Wegetariańskie</span></p>
+            </li>
+          </ul>
+        </section>
+        <section class="menu__panel" id="panel-focaccia" role="tabpanel" aria-labelledby="tab-focaccia">
+          <h3 class="menu__panel-title">Focaccia</h3>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Focaccia con rosmarino</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">130 g</span> 26 zł</span>
+              </p>
+              <p class="dish__desc">Podpłomyk z rozmarynem</p>
+              <p class="dish__desc dish__desc--en" lang="en">Focaccia with rosemary</p>
+               <p class="dish__tags"><span class="tag" data-en="Vegetarian">Wegetariańskie</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Focaccia con aglio</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">130 g</span> 26 zł</span>
+              </p>
+              <p class="dish__desc">Podpłomyk z czosnkiem</p>
+              <p class="dish__desc dish__desc--en" lang="en">Focaccia with garlic</p>
+               <p class="dish__tags"><span class="tag" data-en="Vegetarian">Wegetariańskie</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Sosy</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+              </p>
+              <p class="dish__desc">Czosnkowy, pomidorowy</p>
+              <p class="dish__desc dish__desc--en" lang="en">Garlic, tomato</p>
+            </li>
+          </ul>
+        </section>
+        <section class="menu__panel" id="panel-insalate" role="tabpanel" aria-labelledby="tab-insalate">
+          <h3 class="menu__panel-title">Insalate</h3>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Insalata di pollo</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">360 g</span> 48 zł</span>
+              </p>
+              <p class="dish__desc">Kompozycja sałat, pierś z kurczaka pieczona w przyprawach, pomidorki koktajlowe, rukola, pomidory, ogórek, migdały</p>
+              <p class="dish__desc dish__desc--en" lang="en">Salad composition, chicken breast baked in herbs, cherry tomatoes, rocket salad, tomatoes, cucumber, almond flakes</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Insalata di formaggio di capra</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">320 g</span> 48 zł</span>
+              </p>
+              <p class="dish__desc">Grillowany kozi ser, sałata rzymska, orzechy włoskie, gruszka, winogrona</p>
+              <p class="dish__desc dish__desc--en" lang="en">Grilled goat cheese, romaine lettuce, walnuts, pear, grapes</p>
+               <p class="dish__tags"><span class="tag" data-en="Vegetarian">Wegetariańskie</span></p>
+            </li>
+          </ul>
+        </section>
+        <section class="menu__panel" id="panel-pizza" role="tabpanel" aria-labelledby="tab-pizza">
+          <h3 class="menu__panel-title">Pizza</h3>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Margherita</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">300 g</span> 38 zł</span>
+              </p>
+              <p class="dish__desc">Sos pomidorowy, mozzarella Fior di Latte</p>
+              <p class="dish__desc dish__desc--en" lang="en">Tomato sauce, mozzarella Fior di Latte</p>
+               <p class="dish__tags"><span class="tag" data-en="Vegetarian">Wegetariańskie</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Capricciosa</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">420 g</span> 42 zł</span>
+              </p>
+              <p class="dish__desc">Sos pomidorowy, mozzarella Fior di Latte, szynka Cotto, pieczarki portobello</p>
+              <p class="dish__desc dish__desc--en" lang="en">Tomato sauce, mozzarella Fior di Latte, Cotto ham, portobello mushrooms</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Zucca</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">250 g</span> 46 zł</span>
+              </p>
+              <p class="dish__desc">Sos pomidorowy, Fior di Latte, ricotta, salsiccia, pieczona dynia, rukola, pestki dyni</p>
+              <p class="dish__desc dish__desc--en" lang="en">Tomato sauce, Fior di Latte, ricotta, salsiccia, roasted pumpkin, arugula, pumpkin seeds</p>
+               <p class="dish__tags"><span class="tag tag--chef" data-en="Chef&#x27;s choice">Polecane przez szefa</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Spinaci</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">400 g</span> 42 zł</span>
+              </p>
+              <p class="dish__desc">Sos pomidorowy, mozzarella Fior di Latte, szpinak, czosnek, ricotta</p>
+              <p class="dish__desc dish__desc--en" lang="en">Tomato sauce, mozzarella Fior di Latte, spinach, garlic, ricotta</p>
+               <p class="dish__tags"><span class="tag" data-en="Vegetarian">Wegetariańskie</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Salame</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">390 g</span> 44 zł</span>
+              </p>
+              <p class="dish__desc">Sos pomidorowy, mozzarella Fior di Latte, salami Napoli, oliwki zielone</p>
+              <p class="dish__desc dish__desc--en" lang="en">Tomato sauce, mozzarella Fior di Latte, salami Napoli, green olives</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Salame piccante</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">410 g</span> 44 zł</span>
+              </p>
+              <p class="dish__desc">Sos pomidorowy, mozzarella Fior di Latte, salami spianate, grillowane warzywa: papryka, cukinia, bakłażan, czerwona cebula</p>
+              <p class="dish__desc dish__desc--en" lang="en">Tomato sauce, mozzarella Fior di Latte, salami spianate, grilled vegetables: pepper, zucchini, eggplant, red onion</p>
+               <p class="dish__tags"><span class="tag tag--chef" data-en="Chef&#x27;s choice">Polecane przez szefa</span><span class="tag tag--spicy" data-en="Spicy">Pikantne</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Quattro Formaggi</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">350 g</span> 44 zł</span>
+              </p>
+              <p class="dish__desc">Mozzarella Fior di Latte, gorgonzola, kozi ser dojrzewający, ser ricotta</p>
+              <p class="dish__desc dish__desc--en" lang="en">Mozzarella Fior di Latte, gorgonzola, aged goat cheese, ricotta cheese</p>
+               <p class="dish__tags"><span class="tag" data-en="Vegetarian">Wegetariańskie</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Mamma Mia</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">275 g</span> 42 zł</span>
+              </p>
+              <p class="dish__desc">Mozzarella Fior di Latte, kozi ser, orzeszki piniowe, miód</p>
+              <p class="dish__desc dish__desc--en" lang="en">Mozzarella Fior di Latte, goat cheese, pine nuts, honey</p>
+               <p class="dish__tags"><span class="tag" data-en="Vegetarian">Wegetariańskie</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Parma</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">350 g</span> 48 zł</span>
+              </p>
+              <p class="dish__desc">Sos pomidorowy, mozzarella Fior di Latte, szynka parmeńska, rukola</p>
+              <p class="dish__desc dish__desc--en" lang="en">Tomato sauce, mozzarella Fior di Latte, Parma ham, rocket salad</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Diavola</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">360 g</span> 44 zł</span>
+              </p>
+              <p class="dish__desc">Sos pomidorowy, mozzarella Fior di Latte, salami spianate, papryczka jalapeño, peperoncino</p>
+              <p class="dish__desc dish__desc--en" lang="en">Tomato sauce, mozzarella Fior di Latte, salami spianate, jalapeño, peperoncino pepper</p>
+               <p class="dish__tags"><span class="tag tag--spicy" data-en="Spicy">Pikantne</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Parma e Burrata</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">450 g</span> 54 zł</span>
+              </p>
+              <p class="dish__desc">Sos pomidorowy, mozzarella Fior di Latte, mozzarella burrata, szynka parmeńska, szpinak baby</p>
+              <p class="dish__desc dish__desc--en" lang="en">Tomato sauce, mozzarella Fior di Latte, mozzarella burrata, Parma ham, baby spinach</p>
+            </li>
+          </ul>
+        </section>
+        <section class="menu__panel" id="panel-pasta" role="tabpanel" aria-labelledby="tab-pasta">
+          <h3 class="menu__panel-title">Pasta e risotto</h3>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Tagliatelle alla primavera</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">390 g</span> 42 zł</span>
+              </p>
+              <p class="dish__desc">Tagliatelle w sosie śmietanowym z zielonymi warzywami i Grana Padano</p>
+              <p class="dish__desc dish__desc--en" lang="en">Tagliatelle in a creamy sauce with green vegetables and Grana Padano</p>
+               <p class="dish__tags"><span class="tag" data-en="Vegetarian">Wegetariańskie</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Spaghetti alla carbonara</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">365 g</span> 44 zł</span>
+              </p>
+              <p class="dish__desc">Spaghetti w sosie serowo-śmietanowym z żółtkiem, Grana Padano i guanciale</p>
+              <p class="dish__desc dish__desc--en" lang="en">Spaghetti in cheese and cream sauce with egg yolk, Grana Padano and guanciale</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Pappardelle con pollo e funghi</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">330 g</span> 46 zł</span>
+              </p>
+              <p class="dish__desc">Pappardelle w sosie śmietanowym z kurczakiem, grzybami i natką pietruszki</p>
+              <p class="dish__desc dish__desc--en" lang="en">Pappardelle in cream sauce with chicken, mushrooms and parsley</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Spaghetti al pomodoro con burrata</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">330 g</span> 48 zł</span>
+              </p>
+              <p class="dish__desc">Spaghetti w sosie pomidorowym z burratą</p>
+              <p class="dish__desc dish__desc--en" lang="en">Spaghetti in tomato sauce with burrata</p>
+               <p class="dish__tags"><span class="tag" data-en="Vegetarian">Wegetariańskie</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Pappardelle con manzo e pomodoro</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">270 g</span> 56 zł</span>
+              </p>
+              <p class="dish__desc">Pappardelle z polędwicą w sosie śmietanowo-pomidorowym z czosnkiem, chilli, tymiankiem i natką pietruszki</p>
+              <p class="dish__desc dish__desc--en" lang="en">Pappardelle with beef loin in tomato and cream sauce with garlic, chilli pepper, thyme and parsley</p>
+               <p class="dish__tags"><span class="tag tag--chef" data-en="Chef&#x27;s choice">Polecane przez szefa</span><span class="tag tag--spicy" data-en="Spicy">Pikantne</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Tagliolini con gamberetti e spinaci</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">360 g</span> 56 zł</span>
+              </p>
+              <p class="dish__desc">Tagliolini w sosie z białego wina z krewetkami, szpinakiem i czosnkiem</p>
+              <p class="dish__desc dish__desc--en" lang="en">Tagliolini in white wine sauce with prawns, spinach and garlic</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Lasagne al ragù</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">340 g</span> 49 zł</span>
+              </p>
+              <p class="dish__desc">Lazania mięsna z pieca podawana z lekko pikantnym sosem ze świeżych pomidorów, zapiekana z Grana Padano</p>
+              <p class="dish__desc dish__desc--en" lang="en">Oven-baked lasagna with meat, slightly spicy fresh tomato sauce and Grana Padano cheese</p>
+               <p class="dish__tags"><span class="tag tag--spicy" data-en="Spicy">Pikantne</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Risotto con gamberetti</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">340 g</span> 56 zł</span>
+              </p>
+              <p class="dish__desc">Risotto z krewetkami w pikantnym sosie pomidorowo-śmietanowym z natką pietruszki</p>
+              <p class="dish__desc dish__desc--en" lang="en">Risotto with prawns in a spicy tomato and cream sauce with parsley</p>
+               <p class="dish__tags"><span class="tag tag--spicy" data-en="Spicy">Pikantne</span><span class="tag" data-en="Gluten-free">Bezglutenowe</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Ravioli con spinaci e ricotta</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">200 g</span> 44 zł</span>
+              </p>
+              <p class="dish__desc">Ravioli ze szpinakiem i ricottą podawane z sosem maślano-szałwiowym</p>
+              <p class="dish__desc dish__desc--en" lang="en">Ravioli with spinach and ricotta served with butter and sage sauce</p>
+               <p class="dish__tags"><span class="tag" data-en="Vegetarian">Wegetariańskie</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Tagliatelle con salmone</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">340 g</span> 52 zł</span>
+              </p>
+              <p class="dish__desc">Tagliatelle z kawałkami łososia, groszkiem cukrowym i suszonymi pomidorami w sosie z mascarpone z natką pietruszki</p>
+              <p class="dish__desc dish__desc--en" lang="en">Tagliatelle with salmon, sugar peas and dried tomatoes in a mascarpone sauce with parsley</p>
+            </li>
+          </ul>
+        </section>
+        <section class="menu__panel" id="panel-pesce" role="tabpanel" aria-labelledby="tab-pesce">
+          <h3 class="menu__panel-title">Pesce</h3>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Salmone con spinaci</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">150 / 290 g</span> 64 zł</span>
+              </p>
+              <p class="dish__desc">Łosoś z duszonym szpinakiem, czosnkiem, ziemniakiem ogniskowym i sosem winno-maślanym</p>
+              <p class="dish__desc dish__desc--en" lang="en">Salmon with stewed spinach, garlic, roasted potatoes and wine butter sauce</p>
+               <p class="dish__tags"><span class="tag" data-en="Gluten-free">Bezglutenowe</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Bistecca di tonno alla griglia</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">140 / 380 g</span> 74 zł</span>
+              </p>
+              <p class="dish__desc">Grillowany stek z tuńczyka z białym sezamem, serwowany na makaronie z czarnymi oliwkami, kaparami, anchois i karczochami w sosie pomidorowo-ostrygowym</p>
+              <p class="dish__desc dish__desc--en" lang="en">Grilled tuna steak with white sesame served on pasta with black olives, capers, anchovies and artichokes in tomato and oyster sauce</p>
+               <p class="dish__tags"><span class="tag tag--chef" data-en="Chef&#x27;s choice">Polecane przez szefa</span></p>
+            </li>
+          </ul>
+        </section>
+        <section class="menu__panel" id="panel-carne" role="tabpanel" aria-labelledby="tab-carne">
+          <h3 class="menu__panel-title">Carne</h3>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Petto d&#x27;anatra arrosto in salsa</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">200 / 430 g</span> 68 zł</span>
+              </p>
+              <p class="dish__desc">Pieczona pierś z kaczki sous vide w sosie miodowo-pomarańczowym z kawałkami świeżej gruszki i figi, serwowana z gnocchi</p>
+              <p class="dish__desc dish__desc--en" lang="en">Baked duck breast sous vide in honey and orange sauce with fresh pear and fig, served with gnocchi</p>
+               <p class="dish__tags"><span class="tag tag--chef" data-en="Chef&#x27;s choice">Polecane przez szefa</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Saltimbocca</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">150 / 255 g</span> 74 zł</span>
+              </p>
+              <p class="dish__desc">Kotleciki cielęce duszone w białym winie z szałwią, szynką parmeńską i groszkiem cukrowym, serwowane z gnocchi</p>
+              <p class="dish__desc dish__desc--en" lang="en">Veal chops stewed in white wine with sage, Parma ham and snap peas, served with gnocchi</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Filetto di manzo alla griglia</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">180 / 270 g</span> 86 zł</span>
+              </p>
+              <p class="dish__desc">Sezonowana polędwica wołowa z grilla, ziemniaki z rozmarynem, sos z zielonego pieprzu, szpinak</p>
+              <p class="dish__desc dish__desc--en" lang="en">Grilled beef loin served with green pepper sauce, rosemary potatoes and spinach</p>
+               <p class="dish__tags"><span class="tag" data-en="Gluten-free">Bezglutenowe</span></p>
+            </li>
+          </ul>
+        </section>
+        <section class="menu__panel" id="panel-contorni" role="tabpanel" aria-labelledby="tab-contorni">
+          <h3 class="menu__panel-title">Contorni</h3>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Patate al forno con rosmarino</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">180 g</span> 16 zł</span>
+              </p>
+              <p class="dish__desc">Ziemniaki pieczone z rozmarynem</p>
+              <p class="dish__desc dish__desc--en" lang="en">Baked potatoes with rosemary</p>
+               <p class="dish__tags"><span class="tag" data-en="Gluten-free">Bezglutenowe</span><span class="tag" data-en="Vegetarian">Wegetariańskie</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Insalata mista</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">130 g</span> 16 zł</span>
+              </p>
+              <p class="dish__desc">Sałata dębowa, pomidorki koktajlowe, oliwki, rukola</p>
+              <p class="dish__desc dish__desc--en" lang="en">Oak leaf lettuce, cherry tomatoes, olives, arugula</p>
+               <p class="dish__tags"><span class="tag" data-en="Gluten-free">Bezglutenowe</span><span class="tag" data-en="Vegetarian">Wegetariańskie</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Spinaci con aglio</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">120 g</span> 16 zł</span>
+              </p>
+              <p class="dish__desc">Świeży szpinak duszony z czosnkiem</p>
+              <p class="dish__desc dish__desc--en" lang="en">Spinach stewed with garlic</p>
+               <p class="dish__tags"><span class="tag" data-en="Gluten-free">Bezglutenowe</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Gnocchi</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">180 g</span> 16 zł</span>
+              </p>
+               <p class="dish__tags"><span class="tag" data-en="Vegetarian">Wegetariańskie</span></p>
+            </li>
+          </ul>
+        </section>
+        <section class="menu__panel" id="panel-dolci" role="tabpanel" aria-labelledby="tab-dolci">
+          <h3 class="menu__panel-title">Dolci</h3>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Tiramisù</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">130 g</span> 28 zł</span>
+              </p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Crème brûlée</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">140 g</span> 28 zł</span>
+              </p>
+               <p class="dish__tags"><span class="tag" data-en="Gluten-free">Bezglutenowe</span></p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Torta al cioccolato</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta"><span class="dish__weight">170 g</span> 32 zł</span>
+              </p>
+              <p class="dish__desc">Pieczone ciastko czekoladowe z płynnym środkiem, sos ze świeżych pomarańczy</p>
+              <p class="dish__desc dish__desc--en" lang="en">A la minute soft chocolate cake, fresh orange sauce</p>
+            </li>
+          </ul>
+        </section>
+        <section class="menu__panel" id="panel-napoje" role="tabpanel" aria-labelledby="tab-napoje">
+          <h3 class="menu__panel-title" data-en="Drinks">Napoje</h3>
+          <h4 class="menu__subtitle" data-en="Cocktails">Koktajle</h4>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Pornstar Martini</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">40 zł</span>
+              </p>
+              <p class="dish__desc">Wódka waniliowa, puree z marakui, syrop cukrowy, prosecco</p>
+              <p class="dish__desc dish__desc--en" lang="en">Vanilla vodka, passion fruit purée, sugar syrup, prosecco</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Negroni</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">38 zł</span>
+              </p>
+              <p class="dish__desc">Campari, wermut Rosso, Tanqueray no. Ten, pomarańcza</p>
+              <p class="dish__desc dish__desc--en" lang="en">Campari, Rosso vermouth, Tanqueray no. Ten, orange</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">G&amp;T Orange</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">38 zł</span>
+              </p>
+              <p class="dish__desc">Tanqueray Flor de Sevilla, tonic, pomarańcza</p>
+              <p class="dish__desc dish__desc--en" lang="en">Tanqueray Flor de Sevilla, tonic, orange</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Whisky Sour</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">36 zł</span>
+              </p>
+              <p class="dish__desc">Johnnie Walker Black Label, sok z cytryny, syrop cukrowy, białko, angostura</p>
+              <p class="dish__desc dish__desc--en" lang="en">Johnnie Walker Black Label, lemon juice, sugar syrup, egg white, angostura</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Hugo Spritz</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">36 zł</span>
+              </p>
+              <p class="dish__desc">Aperitivo Sambuco, prosecco, woda gazowana, limonka, mięta</p>
+              <p class="dish__desc dish__desc--en" lang="en">Aperitivo Sambuco, prosecco, sparkling water, lime, mint</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Aperol Spritz</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">38 zł</span>
+              </p>
+              <p class="dish__desc">Aperol, prosecco, woda gazowana, pomarańcza</p>
+              <p class="dish__desc dish__desc--en" lang="en">Aperol, prosecco, sparkling water, orange</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Amaretto Sour</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">36 zł</span>
+              </p>
+              <p class="dish__desc">Likier Amaretto, Bulleit Bourbon, białko, syrop cukrowy</p>
+              <p class="dish__desc dish__desc--en" lang="en">Amaretto liqueur, Bulleit Bourbon, egg white, sugar syrup</p>
+            </li>
+          </ul>
+          <h4 class="menu__subtitle" data-en="Non-alcoholic cocktails">Mocktaile</h4>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Aperitivo 0% Spritz</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">26 zł</span>
+              </p>
+              <p class="dish__desc">Gasco Aperitivo bitter, woda gazowana, pomarańcza</p>
+              <p class="dish__desc dish__desc--en" lang="en">Gasco Aperitivo bitter, sparkling water, orange</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">G&amp;T 0%</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">30 zł</span>
+              </p>
+              <p class="dish__desc">Gin 0%, tonic, limonka</p>
+              <p class="dish__desc dish__desc--en" lang="en">Gin 0%, tonic, lime</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Limoncello Spritz 0%</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">28 zł</span>
+              </p>
+              <p class="dish__desc">Limoncello 0%, tonic, cytryna</p>
+              <p class="dish__desc dish__desc--en" lang="en">Limoncello 0%, tonic, lemon</p>
+            </li>
+          </ul>
+          <h4 class="menu__subtitle" data-en="White wine — glass 125 ml / bottle">Wino białe — kieliszek 125 ml / butelka</h4>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Pinot Grigio Asolo Montello</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">28 / 140 zł</span>
+              </p>
+              <p class="dish__desc">Dal Bello, Veneto, Włochy</p>
+              <p class="dish__desc dish__desc--en" lang="en">Dal Bello, Veneto, Italy</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Sauvignon Blanc Pradio Sobaja</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">170 zł</span>
+              </p>
+              <p class="dish__desc">Cielo e Terra, Włochy</p>
+              <p class="dish__desc dish__desc--en" lang="en">Cielo e Terra, Italy</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Pecorino</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">32 / 150 zł</span>
+              </p>
+              <p class="dish__desc">Casal Farneto Quirico, Włochy</p>
+              <p class="dish__desc dish__desc--en" lang="en">Casal Farneto Quirico, Italy</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Riesling Feinherb St Cuvée #10</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">33 / 160 zł</span>
+              </p>
+              <p class="dish__desc">Gebrüder Steffen, Mozela, Niemcy</p>
+              <p class="dish__desc dish__desc--en" lang="en">Gebrüder Steffen, Mosel, Germany</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Sauvignon Blanc</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">32 / 155 zł</span>
+              </p>
+              <p class="dish__desc">Cuatro Rayas, Hiszpania</p>
+              <p class="dish__desc dish__desc--en" lang="en">Cuatro Rayas, Spain</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Chablis</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">370 zł</span>
+              </p>
+              <p class="dish__desc">Domaine Hamelin, Burgundia, Francja</p>
+              <p class="dish__desc dish__desc--en" lang="en">Domaine Hamelin, Burgundy, France</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Solaris</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">43 / 210 zł</span>
+              </p>
+              <p class="dish__desc">Winnica Wzgórze Lanckorońskie, Polska</p>
+              <p class="dish__desc dish__desc--en" lang="en">Wzgórze Lanckorońskie, Poland</p>
+            </li>
+          </ul>
+          <h4 class="menu__subtitle" data-en="Rosé wine">Wino różowe</h4>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Clarendelle Rosé</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">45 / 220 zł</span>
+              </p>
+              <p class="dish__desc">Clarence Dillon, Bordeaux, Francja</p>
+              <p class="dish__desc dish__desc--en" lang="en">Clarence Dillon, Bordeaux, France</p>
+            </li>
+          </ul>
+          <h4 class="menu__subtitle" data-en="Red wine">Wino czerwone</h4>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Merlot Asolo Montello</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">29 / 145 zł</span>
+              </p>
+              <p class="dish__desc">Dal Bello, Veneto, Włochy</p>
+              <p class="dish__desc dish__desc--en" lang="en">Dal Bello, Veneto, Italy</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Chianti</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">150 zł</span>
+              </p>
+              <p class="dish__desc">Colli Sensei, Włochy</p>
+              <p class="dish__desc dish__desc--en" lang="en">Colli Sensei, Italy</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Ripasso Valpolicella Classico Superiore</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">47 / 230 zł</span>
+              </p>
+              <p class="dish__desc">Monte del Frà, Veneto, Włochy</p>
+              <p class="dish__desc dish__desc--en" lang="en">Monte del Frà, Veneto, Italy</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Primitivo</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">31 / 150 zł</span>
+              </p>
+              <p class="dish__desc">Gran Sasso, Włochy</p>
+              <p class="dish__desc dish__desc--en" lang="en">Gran Sasso, Italy</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Barbera d&#x27;Asti Desideria</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">210 zł</span>
+              </p>
+              <p class="dish__desc">Guasti, Piemont, Włochy</p>
+              <p class="dish__desc dish__desc--en" lang="en">Guasti, Piedmont, Italy</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Rioja Crianza</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">47 / 230 zł</span>
+              </p>
+              <p class="dish__desc">Ramón Bilbao, La Rioja, Hiszpania</p>
+              <p class="dish__desc dish__desc--en" lang="en">Ramón Bilbao, La Rioja, Spain</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Malbec Teia</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">39 / 220 zł</span>
+              </p>
+              <p class="dish__desc">Bodega Lagrande, Argentyna</p>
+              <p class="dish__desc dish__desc--en" lang="en">Bodega Lagrande, Argentina</p>
+            </li>
+          </ul>
+          <h4 class="menu__subtitle" data-en="Sparkling and sweet wine">Wina musujące i deserowe</h4>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Prosecco DOC Treviso Brut Millesimato</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">29 / 140 zł</span>
+              </p>
+              <p class="dish__desc">Dal Bello, Włochy</p>
+              <p class="dish__desc dish__desc--en" lang="en">Dal Bello, Italy</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Prosecco Rosé Brut</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">32 / 155 zł</span>
+              </p>
+              <p class="dish__desc">Montelvini, Włochy</p>
+              <p class="dish__desc dish__desc--en" lang="en">Montelvini, Italy</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Moscato d&#x27;Asti</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">32 / 155 zł</span>
+              </p>
+              <p class="dish__desc">Araldica, Włochy</p>
+              <p class="dish__desc dish__desc--en" lang="en">Araldica, Italy</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Evadne Verdejo 0%</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">29 / 140 zł</span>
+              </p>
+              <p class="dish__desc">Bodegas Verdúguez — bezalkoholowe</p>
+              <p class="dish__desc dish__desc--en" lang="en">Bodegas Verdúguez — non-alcoholic</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Fizzero Sparkling 0%</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">29 / 140 zł</span>
+              </p>
+              <p class="dish__desc">De Bortoli Wines — bezalkoholowe</p>
+              <p class="dish__desc dish__desc--en" lang="en">De Bortoli Wines — non-alcoholic</p>
+            </li>
+          </ul>
+          <h4 class="menu__subtitle" data-en="Beer">Piwo</h4>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Peroni Nastro Azzurro</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">20 zł</span>
+              </p>
+              <p class="dish__desc">beczkowe, 400 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">draft, 400 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Książęce Złote Pszeniczne</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">18 / 20 zł</span>
+              </p>
+              <p class="dish__desc">beczkowe, 330 / 500 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">draft, 330 / 500 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Książęce Lager</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">18 / 20 zł</span>
+              </p>
+              <p class="dish__desc">beczkowe, 330 / 500 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">draft, 330 / 500 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Książęce IPA</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">21 zł</span>
+              </p>
+              <p class="dish__desc">butelkowe, 500 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">bottled, 500 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Książęce Ciemne Łagodne</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">21 zł</span>
+              </p>
+              <p class="dish__desc">butelkowe, 500 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">bottled, 500 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Książęce Czerwony Lager</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">21 zł</span>
+              </p>
+              <p class="dish__desc">butelkowe, 500 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">bottled, 500 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Captain Jack Original / Citrus Tonic</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">18 zł</span>
+              </p>
+              <p class="dish__desc">smakowe, 400 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">flavoured, 400 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Hardmade Exotic Kumkwat / Yuzu Lemon</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">18 zł</span>
+              </p>
+              <p class="dish__desc">smakowe, 400 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">flavoured, 400 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Single Citrus Smoothie Juice IPA</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">25 zł</span>
+              </p>
+              <p class="dish__desc">krakowskie kraftowe, 500 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">Cracow craft, 500 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Czternastka Pils</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">24 zł</span>
+              </p>
+              <p class="dish__desc">krakowskie kraftowe, 500 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">Cracow craft, 500 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Peroni Nastro Azzurro 0%</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">18 zł</span>
+              </p>
+              <p class="dish__desc">bezalkoholowe, 330 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">non-alcoholic, 330 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Lech Free Lager / Lime Mint</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">18 zł</span>
+              </p>
+              <p class="dish__desc">bezalkoholowe, 330 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">non-alcoholic, 330 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Książęce Złote Pszeniczne 0% / IPA 0%</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">21 zł</span>
+              </p>
+              <p class="dish__desc">bezalkoholowe, 500 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">non-alcoholic, 500 ml</p>
+            </li>
+          </ul>
+          <h4 class="menu__subtitle" data-en="Hot beverages">Napoje gorące</h4>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Espresso</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">14 zł</span>
+              </p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Espresso Doppio</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">16 zł</span>
+              </p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Espresso Macchiato</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">15 zł</span>
+              </p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Americano</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">15 zł</span>
+              </p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Cappuccino</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">17 zł</span>
+              </p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Flat White</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">17 zł</span>
+              </p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Latte</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">18 zł</span>
+              </p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Italian Coffee</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">29 zł</span>
+              </p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Irish Coffee</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">29 zł</span>
+              </p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Baileys Coffee</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">28 zł</span>
+              </p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Herbata Newby</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">22 zł</span>
+              </p>
+              <p class="dish__desc">Earl Grey, assam, English breakfast, jasmin blossom, green tea gunpowder, mango strawberry, rosehip, black tropical</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Herbata Damman</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">22 zł</span>
+              </p>
+              <p class="dish__desc">Malina–marakuja, English breakfast, rumianek, Earl Grey, mięta, rooibos cytrusowo-owocowy, jaśminowa, zielona Yunnan Vert</p>
+              <p class="dish__desc dish__desc--en" lang="en">Raspberry–passion fruit, English breakfast, camomile, Earl Grey, mint, citrus-fruit rooibos, jasmine, green Yunnan Vert</p>
+            </li>
+          </ul>
+          <h4 class="menu__subtitle" data-en="Cold drinks">Napoje zimne</h4>
+          <ul class="dishes">
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Coca-Cola Zero / Original Taste</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">15 zł</span>
+              </p>
+              <p class="dish__desc">250 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Fanta / Sprite</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">15 zł</span>
+              </p>
+              <p class="dish__desc">250 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Kinley Tonic Water / Pink Aromatic Berry</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">15 zł</span>
+              </p>
+              <p class="dish__desc">250 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">FuzeTea</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">16 zł</span>
+              </p>
+              <p class="dish__desc">Brzoskwiniowa z hibiskusem, cytrynowa z trawą cytrynową</p>
+              <p class="dish__desc dish__desc--en" lang="en">Peach &amp; hibiscus, lemon &amp; lemongrass</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Soki Cappy</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">15 zł</span>
+              </p>
+              <p class="dish__desc">Pomarańcza, jabłko</p>
+              <p class="dish__desc dish__desc--en" lang="en">Orange, apple</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Burn</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">18 zł</span>
+              </p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Lemoniada klasyczna</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">22 zł</span>
+              </p>
+              <p class="dish__desc dish__desc--en" lang="en">Classic lemonade</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Lemoniada pomarańcza / cytryna</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">22 zł</span>
+              </p>
+              <p class="dish__desc dish__desc--en" lang="en">Orange / lemon lemonade</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Lemoniada marakuja</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">24 zł</span>
+              </p>
+              <p class="dish__desc dish__desc--en" lang="en">Passion fruit lemonade</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Świeżo wyciskane soki</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">24 zł</span>
+              </p>
+              <p class="dish__desc">Pomarańcza, grejpfrut lub mix, 250 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">Orange, grapefruit or mixed, 250 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Kinga Pienińska</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">14 / 20 zł</span>
+              </p>
+              <p class="dish__desc">Niegazowana / gazowana, 330 / 700 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">Still / sparkling, 330 / 700 ml</p>
+            </li>
+            <li class="dish">
+              <p class="dish__head">
+                <span class="dish__name">Kropla Beskidu</span>
+                <span class="dish__leader" aria-hidden="true"></span>
+                <span class="dish__meta">14 / 20 zł</span>
+              </p>
+              <p class="dish__desc">Niegazowana / gazowana, 330 / 700 ml</p>
+              <p class="dish__desc dish__desc--en" lang="en">Still / sparkling, 330 / 700 ml</p>
+            </li>
+          </ul>
+          <details class="spirits">
+            <summary data-en="Full spirits list">Pełna karta alkoholi</summary>
+            <div class="spirits__grid">
+              <div>
+                <h5 class="menu__subtitle" style="margin-top:0">Whiskey & Bourbon <span class="dish__weight">40 ml</span></h5>
+                <ul class="spirits__list">
+                  <li><span>Johnnie Walker Black Label 12 Y.O.</span><span class="dish__leader" aria-hidden="true"></span><b>28 zł</b></li>
+                  <li><span>Johnnie Walker Gold Label Reserve</span><span class="dish__leader" aria-hidden="true"></span><b>40 zł</b></li>
+                  <li><span>Bulleit Bourbon Frontier</span><span class="dish__leader" aria-hidden="true"></span><b>26 zł</b></li>
+                  <li><span>Bulleit 95 Rye Frontier</span><span class="dish__leader" aria-hidden="true"></span><b>27 zł</b></li>
+                  <li><span>Talisker Single Malt 10 Y.O.</span><span class="dish__leader" aria-hidden="true"></span><b>45 zł</b></li>
+                  <li><span>Singleton Luscious Nectar 12 Y.O.</span><span class="dish__leader" aria-hidden="true"></span><b>30 zł</b></li>
+                  <li><span>Jameson</span><span class="dish__leader" aria-hidden="true"></span><b>26 zł</b></li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="menu__subtitle" style="margin-top:0">Gin <span class="dish__weight">40 ml</span></h5>
+                <ul class="spirits__list">
+                  <li><span>Bombay Sapphire</span><span class="dish__leader" aria-hidden="true"></span><b>30 zł</b></li>
+                  <li><span>Hendrick&#x27;s</span><span class="dish__leader" aria-hidden="true"></span><b>36 zł</b></li>
+                  <li><span>Tanqueray Flor de Sevilla</span><span class="dish__leader" aria-hidden="true"></span><b>31 zł</b></li>
+                  <li><span>Tanqueray no. Ten</span><span class="dish__leader" aria-hidden="true"></span><b>33 zł</b></li>
+                  <li><span>Gordon&#x27;s Pink</span><span class="dish__leader" aria-hidden="true"></span><b>26 zł</b></li>
+                  <li><span>Gordon&#x27;s London Dry</span><span class="dish__leader" aria-hidden="true"></span><b>26 zł</b></li>
+                  <li><span>Gordon&#x27;s 0.0% Alcohol Free</span><span class="dish__leader" aria-hidden="true"></span><b>24 zł</b></li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="menu__subtitle" style="margin-top:0">Rum <span class="dish__weight">40 ml</span></h5>
+                <ul class="spirits__list">
+                  <li><span>Captain Morgan</span><span class="dish__leader" aria-hidden="true"></span><b>26 zł</b></li>
+                  <li><span>The Kraken Black Spiced</span><span class="dish__leader" aria-hidden="true"></span><b>28 zł</b></li>
+                  <li><span>Dictador 12 Y.O.</span><span class="dish__leader" aria-hidden="true"></span><b>35 zł</b></li>
+                  <li><span>Zacapa 23 Y.O.</span><span class="dish__leader" aria-hidden="true"></span><b>44 zł</b></li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="menu__subtitle" style="margin-top:0">Wódka <span class="dish__weight">40 ml</span></h5>
+                <ul class="spirits__list">
+                  <li><span>Chopin Rye</span><span class="dish__leader" aria-hidden="true"></span><b>24 zł</b></li>
+                  <li><span>Chopin Potato</span><span class="dish__leader" aria-hidden="true"></span><b>29 zł</b></li>
+                  <li><span>Chopin Młody Ziemniak</span><span class="dish__leader" aria-hidden="true"></span><b>38 zł</b></li>
+                  <li><span>Żubrówka Bison Grass</span><span class="dish__leader" aria-hidden="true"></span><b>22 zł</b></li>
+                  <li><span>Krzeska ziołowa</span><span class="dish__leader" aria-hidden="true"></span><b>36 zł</b></li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="menu__subtitle" style="margin-top:0">Tequila <span class="dish__weight">40 ml</span></h5>
+                <ul class="spirits__list">
+                  <li><span>Don Julio Blanco</span><span class="dish__leader" aria-hidden="true"></span><b>39 zł</b></li>
+                  <li><span>Don Julio Reposado</span><span class="dish__leader" aria-hidden="true"></span><b>37 zł</b></li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="menu__subtitle" style="margin-top:0">Cognac & Brandy <span class="dish__weight">40 ml</span></h5>
+                <ul class="spirits__list">
+                  <li><span>Metaxa *****</span><span class="dish__leader" aria-hidden="true"></span><b>30 zł</b></li>
+                  <li><span>Rémy Martin V.S.O.P.</span><span class="dish__leader" aria-hidden="true"></span><b>40 zł</b></li>
+                  <li><span>Rémy Martin X.O.</span><span class="dish__leader" aria-hidden="true"></span><b>99 zł</b></li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="menu__subtitle" style="margin-top:0">Wermut <span class="dish__weight">80 ml</span></h5>
+                <ul class="spirits__list">
+                  <li><span>Bianco Tosti 1820 Italia</span><span class="dish__leader" aria-hidden="true"></span><b>26 zł</b></li>
+                  <li><span>Rosso Tosti 1820 Italia</span><span class="dish__leader" aria-hidden="true"></span><b>26 zł</b></li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="menu__subtitle" style="margin-top:0">Likiery & digestif <span class="dish__weight">40 ml</span></h5>
+                <ul class="spirits__list">
+                  <li><span>Chopin karmel z solą morską</span><span class="dish__leader" aria-hidden="true"></span><b>22 zł</b></li>
+                  <li><span>Chopin czekoladowy</span><span class="dish__leader" aria-hidden="true"></span><b>22 zł</b></li>
+                  <li><span>Chopin Etiuda wiśniowa</span><span class="dish__leader" aria-hidden="true"></span><b>26 zł</b></li>
+                  <li><span>Amaro Lucano</span><span class="dish__leader" aria-hidden="true"></span><b>24 zł</b></li>
+                  <li><span>Cointreau</span><span class="dish__leader" aria-hidden="true"></span><b>24 zł</b></li>
+                  <li><span>Sambuca</span><span class="dish__leader" aria-hidden="true"></span><b>24 zł</b></li>
+                  <li><span>Kahlúa de Café</span><span class="dish__leader" aria-hidden="true"></span><b>24 zł</b></li>
+                  <li><span>Amaretto</span><span class="dish__leader" aria-hidden="true"></span><b>22 zł</b></li>
+                  <li><span>Baileys Irish Cream</span><span class="dish__leader" aria-hidden="true"></span><b>24 zł</b></li>
+                  <li><span>Campari Bitter</span><span class="dish__leader" aria-hidden="true"></span><b>22 zł</b></li>
+                  <li><span>Fernet-Branca</span><span class="dish__leader" aria-hidden="true"></span><b>24 zł</b></li>
+                  <li><span>Jägermeister</span><span class="dish__leader" aria-hidden="true"></span><b>26 zł</b></li>
+                  <li><span>Limoncello</span><span class="dish__leader" aria-hidden="true"></span><b>26 zł</b></li>
+                  <li><span>Paesano Pistacchio</span><span class="dish__leader" aria-hidden="true"></span><b>25 zł</b></li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="menu__subtitle" style="margin-top:0">Grappa</h5>
+                <ul class="spirits__list">
+                  <li><span>Giare Grappa: Amarone / Chardonnay / Gewürztraminer — 40 ml</span><span class="dish__leader" aria-hidden="true"></span><b>39 zł</b></li>
+                  <li><span>Degustacja grappy — 3 × 20 ml</span><span class="dish__leader" aria-hidden="true"></span><b>57 zł</b></li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </section>
+<!-- ============ KONIEC BLOKU MENU ============ -->
+
+        <div class="menu__fineprint">
+          <p data-en="All dishes are prepared from fresh produce to your individual order. Waiting time is approximately 45 minutes.">
+            Wszystkie dania przygotowujemy wyłącznie ze świeżych produktów, na Państwa indywidualne
+            zamówienie. Czas oczekiwania wynosi około 45 minut.
+          </p>
+          <p data-en="We appreciate the opportunity to thank the waiting team through a service charge of 12.5% to 17%. We leave this to your discretion. For bookings over 4 people a 12.5% service charge is added automatically.">
+            Cenimy sobie możliwość podziękowania za obsługę zespołu kelnerskiego poprzez serwis
+            w przedziale od 12,5% do 17%. Pozostawiamy to do Państwa uznania. Przy rezerwacji
+            powyżej 4 osób doliczamy serwis 12,5%.
+          </p>
+          <p data-en="The allergen menu is available from the restaurant manager. Half a portion costs 60% of the price. Our kitchen uses products containing gluten, so trace amounts may appear even in gluten-free dishes; gluten-free pasta is available on request. Takeaway orders carry an additional 2 PLN packaging fee.">
+            Karta menu z wyszczególnionymi alergenami znajduje się u managera restauracji.
+            Pół porcji kosztuje 60% ceny. W naszej kuchni używamy produktów zawierających gluten,
+            więc śladowe ilości mogą pojawić się również w daniach bezglutenowych; na życzenie
+            podajemy makaron bezglutenowy. Przy zamówieniach na wynos doliczamy opłatę 2 zł
+            za opakowanie.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="stripe-band" aria-hidden="true"></div>
+
+    <!-- ===================== GALERIA ===================== -->
+    <section class="section section--red" id="galeria">
+      <div class="container">
+        <p class="section__eyebrow" data-en="Gallery">Galeria</p>
+        <h2 class="section__title" data-en="From the pass">Prosto z kuchni</h2>
+
+        <div class="gallery">
+          <figure>
+            <img src="images/piec.webp" alt="Wyłożony mozaiką piec do pizzy w kuchni restauracji" width="549" height="823" loading="lazy">
+          </figure>
+          <figure>
+            <img src="images/krewetki.webp" alt="Gamberetti — krewetki argentyńskie w sosie z białego wina" width="549" height="823" loading="lazy">
+          </figure>
+          <figure>
+            <img src="images/kaczka.webp" alt="Pierś z kaczki z figami w sosie miodowo-pomarańczowym" width="549" height="824" loading="lazy">
+          </figure>
+          <figure>
+            <img src="images/pizza-burrata.webp" alt="Pizza z burratą i szynką parmeńską podana na tarasie" width="549" height="824" loading="lazy">
+          </figure>
+          <figure>
+            <img src="images/tunczyk.webp" alt="Grillowany stek z tuńczyka w sezamie obok pizzy z burratą" width="549" height="823" loading="lazy">
+          </figure>
+          <figure>
+            <img src="images/spaghetti-burrata.webp" alt="Spaghetti w sosie pomidorowym z burratą i kieliszek białego wina" width="549" height="823" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="stripe-band" aria-hidden="true"></div>
+
+    <!-- ===================== SEKCJA CIEMNA ===================== -->
+    <section class="section feature" id="taras">
+      <div class="container feature__grid">
+
+        <div class="feature__media">
+          <img src="images/wnetrze-3.webp"
+               alt="Wnętrze restauracji — ceglana ściana, gięte krzesła i żółte tulipany na stole"
+               width="938" height="310" loading="lazy">
+        </div>
+
+        <div>
+          <p class="section__eyebrow" data-en="Terrace &amp; bookings">Taras i rezerwacje</p>
+          <h2 class="section__title" data-en="Book before you come">Zarezerwuj, zanim przyjdziesz</h2>
+          <p data-en="On Friday and Saturday evenings, and on anything that counts as an occasion, the room fills up. The courtyard terrace has a handful of tables and they go first. Booking takes a minute and saves you standing on Karmelicka.">
+            W piątkowe i sobotnie wieczory, a także przy każdej okazji, która się liczy, sala
+            zapełnia się w całości. Taras na dziedzińcu ma kilka stolików i schodzą pierwsze.
+            Rezerwacja zajmuje minutę i oszczędza stania na Karmelickiej.
+          </p>
+          <p style="margin-bottom:2rem">
+            <a href="tel:+48124300492" data-en="Or call us: +48 12 430 04 92">Albo zadzwoń: +48 12 430 04 92</a>
+          </p>
+          <a class="button button--primary"
+             href="https://www.covermanager.com/reservation/module_restaurant/restaurante-mammamia/polish"
+             data-href-en="https://www.covermanager.com/reservation/module_restaurant/restaurante-mammamia/english"
+             target="_blank" rel="noopener"
+             data-en="Book a table">Rezerwuj stolik</a>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="stripe-band" aria-hidden="true"></div>
+
+    <!-- ===================== KONTAKT ===================== -->
+    <section class="section" id="kontakt">
+      <div class="container">
+        <p class="section__eyebrow" data-en="Contact">Kontakt</p>
+        <h2 class="section__title" data-en="Find us">Jak nas znaleźć</h2>
+
+        <div class="contact__grid">
+          <div>
+            <table class="hours">
+              <caption class="visually-hidden" data-en="Opening hours">Godziny otwarcia</caption>
+              <tbody>
+                <tr><th scope="row" data-en="Monday – Thursday">Poniedziałek – czwartek</th><td>13:00 – 22:00</td></tr>
+                <tr><th scope="row" data-en="Friday">Piątek</th><td>13:00 – 23:00</td></tr>
+                <tr><th scope="row" data-en="Saturday">Sobota</th><td>12:00 – 23:00</td></tr>
+                <tr><th scope="row" data-en="Sunday">Niedziela</th><td>12:00 – 22:00</td></tr>
+              </tbody>
+            </table>
+
+            <address class="contact__details">
+              <dl style="margin:0">
+                <div class="contact__row">
+                  <dt data-en="Address">Adres</dt>
+                  <dd>Karmelicka 14<br>31-128 Kraków</dd>
+                </div>
+                <div class="contact__row">
+                  <dt data-en="Phone">Telefon</dt>
+                  <dd><a href="tel:+48124300492">+48 12 430 04 92</a></dd>
+                </div>
+                <div class="contact__row">
+                  <dt data-en="Getting here">Dojazd</dt>
+                  <dd data-en="Five minutes on foot from the Main Square. Tram stop Teatr Bagatela, 300 metres away.">
+                    Pięć minut pieszo od Rynku Głównego. Przystanek tramwajowy Teatr Bagatela,
+                    300 metrów.
+                  </dd>
+                </div>
+              </dl>
+            </address>
+          </div>
+
+          <div>
+            <iframe class="map"
+                    src="https://www.google.com/maps?q=Karmelicka%2014,%2031-128%20Krak%C3%B3w&amp;output=embed"
+                    title="Mapa — Karmelicka 14, Kraków"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="stripe-band" aria-hidden="true"></div>
+
+  <!-- ===================== STOPKA ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__cols">
+
+        <div>
+          <h2 data-en="Trattoria Mamma Mia">Trattoria Mamma Mia</h2>
+          <ul>
+            <li>Karmelicka 14, 31-128 Kraków</li>
+            <li><a href="tel:+48124300492">+48 12 430 04 92</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 data-en="On the site">Na stronie</h2>
+          <ul>
+            <li><a href="#o-nas" data-en="About">O nas</a></li>
+            <li><a href="#menu" data-en="Menu">Menu</a></li>
+            <li><a href="#galeria" data-en="Gallery">Galeria</a></li>
+            <li><a href="#kontakt" data-en="Contact">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 data-en="Sister restaurants">Restauracje siostrzane</h2>
+          <ul>
+            <li><a href="https://lacampana.pl" target="_blank" rel="noopener">La Campana</a></li>
+            <li><a href="https://kogel-mogel.pl" target="_blank" rel="noopener">Kogel-Mogel</a></li>
+            <li><a href="https://lagrandemamma.pl" target="_blank" rel="noopener">La Grande Mamma</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 data-en="Book">Rezerwacja</h2>
+          <ul>
+            <li>
+              <a href="https://www.covermanager.com/reservation/module_restaurant/restaurante-mammamia/polish"
+                 data-href-en="https://www.covermanager.com/reservation/module_restaurant/restaurante-mammamia/english"
+                 target="_blank" rel="noopener"
+                 data-en="Book a table online">Rezerwuj stolik online</a>
+            </li>
+            <!-- TODO: uzupełnić realne adresy profili społecznościowych restauracji -->
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <p class="footer-script" aria-hidden="true">Trattoria</p>
+    <p class="footer-wordmark" aria-hidden="true">Mamma Mia</p>
+    <div class="checker-band" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="site-footer__legal">
+        <span>© <span id="rok">2026</span> Trattoria Mamma Mia</span>
+        <span data-en="Menu prices as printed on the current card. We reserve the right to change them.">
+          Ceny zgodne z aktualną kartą. Zastrzegamy prawo do ich zmiany.
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Trattoria Mamma Mia",
+    "servesCuisine": ["Włoska", "Śródziemnomorska", "Pizza"],
+    "priceRange": "$$",
+    "telephone": "+48124300492",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Karmelicka 14",
+      "postalCode": "31-128",
+      "addressLocality": "Kraków",
+      "addressCountry": "PL"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "13:00", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "13:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "12:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "22:00" }
+    ],
+    "acceptsReservations": "https://www.covermanager.com/reservation/module_restaurant/restaurante-mammamia/polish"
+  }
+  </script>
+
+  <script src="js/script.js?v=43" defer></script>
+</body>
+</html>

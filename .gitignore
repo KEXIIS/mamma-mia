@@ -1,0 +1,11 @@
+# Śmieci systemowe
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Lokalne ustawienia Claude Code (launch.json zostaje — przydaje się w zespole)
+.claude/settings.local.json
+
+# Pliki tymczasowe i podglądowe
+_podglad*
+*.tmp

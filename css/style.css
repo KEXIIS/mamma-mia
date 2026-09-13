@@ -1,0 +1,1155 @@
+/* =========================================================
+   TRATTORIA MAMMA MIA
+   Klimat — włoska pizzeria w Nowym Jorku: ukośne kliny, tłusty skrypt,
+   markiza, szachownica, pełnoszerokie kadry.
+   Len i orzech z Houseplanta jako podłoże; pomidor i bazylia jako akcenty.
+   ========================================================= */
+
+/* =========================================================
+   1. TOKENY — prymitywy → semantyka → komponenty
+   ========================================================= */
+:root {
+  /* -- prymitywy: Houseplant -- */
+  --p-walnut:      #321E1E;
+  --p-walnut-soft: #463938;
+  --p-linen:       #F4F1E0;
+  --p-graphite:    #464545;
+  /* Houseplant podaje tu neutralne #F4F4F4, ale w ciepłej palecie
+     ta szarość czyta się jak brud — ocieplona do piaskowej. */
+  --p-sand:        #EFE9D7;
+
+  /* -- prymitywy: pomidor i bazylia --
+     Warianty jasne idą na wielkie płaszczyzny, kliny, markizę i display.
+     Warianty -ink na tekst poniżej 24px (kontrast AA na lnie).
+     Wariant -deep pod biały tekst na wypełnieniu. */
+  /* Jedna czerwień na wszystkie płaszczyzny. Jaśniejsze #DC4527 dawało
+     kremowemu tekstowi na klinie hero 3,75:1, a bieli 4,26:1 — poniżej progu
+     AA przy 16px niezależnie od krycia. Przyciemnienie naprawia lead i przycisk
+     w hero (oba 4,7:1) i przy okazji likwiduje zgrzyt dwóch prawie identycznych
+     czerwieni obok siebie. */
+  --p-pomodoro:      #C33A1F;   /* klin, markiza, skrypt, hairline'y, wypełnienia */
+  --p-pomodoro-ink:  #9C2B15;   /* drobny tekst; na piaskowym 6,3:1 (#A82F18 dawało 4,37) */
+  --p-basilico:      #5FA95A;   /* kolumna, markiza, wypełnienia */
+  --p-basilico-ink:  #2E6B2A;   /* drobny tekst na lnie, 5,7:1 */
+  --p-basilico-deep: #23512A;   /* ciemny wariant bazylii, obecnie nieużywany */
+  --p-oliva:         #46592E;   /* oliwka z boazerii we wnętrzu; len na niej 6,8:1 */
+
+  /* -- semantyka -- */
+  --c-bg:          var(--p-linen);
+  --c-bg-alt:      var(--p-sand);
+  --c-bg-dark:     var(--p-walnut);
+  /* Pasek nawigacji osobno od sekcji ciemnej. Ciemny pasek sąsiadujący
+     wprost z pomidorowym klinem konkuruje z nim o uwagę — niezależnie
+     od tego, czy jest orzechowy czy zielony. Jasny pasek oddaje całą
+     siłę uderzenia czerwieni; definiuje go kreska na dole, nie wypełnienie. */
+  /* Sekcja z tarasem. Orzech był tam jedynym ciemnym pasem i w systemie
+     len-plus-czerwień czytał się mętnie — nie rozmawiał z niczym innym.
+     Wybrana oliwka: powtarza boazerię ze zdjęcia użytego w tej właśnie sekcji,
+     a czerwień występuje już jako wielka płaszczyzna w hero — drugi taki pas
+     przechyliłby system w monotonię. Powrót na czerwień: var(--c-accent-fill). */
+  --c-bg-feature:  var(--p-oliva);
+
+  --c-bg-nav:      var(--p-linen);
+  --c-nav-ink:     var(--p-walnut);
+  --c-ink:         var(--p-walnut);
+  --c-ink-soft:    var(--p-graphite);
+  --c-on-dark:     var(--p-linen);
+  --c-accent:        var(--p-pomodoro-ink);    /* tekst akcentowy */
+  --c-accent-fill:   var(--p-pomodoro);        /* płaszczyzny i display */
+  --c-accent-solid:  var(--p-pomodoro);        /* wypełnienia pod biały tekst */
+  --c-accent-2:      var(--p-basilico-ink);
+  --c-accent-2-fill: var(--p-basilico);
+  --c-line:        color-mix(in srgb, var(--p-walnut) 26%, transparent);
+  --c-line-soft:   color-mix(in srgb, var(--p-walnut) 14%, transparent);
+
+  /* -- typografia -- */
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-serif:   "Petrona", Georgia, "Times New Roman", serif;
+  --font-script:  "Yellowtail", "Brush Script MT", cursive;
+
+  /* -- skala odstępów (baza 4px) -- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* -- układ -- */
+  --content-max: 1200px;
+  --gutter: clamp(1.25rem, 5vw, 3.5rem);
+
+  /* -- kształty -- */
+  --radius-button: 4px;
+  --radius-card: 8px;
+  --shadow-card: rgba(0, 0, 0, 0.1) 0 2px 8px;
+  --shadow-button: rgba(0, 0, 0, 0.15) 0 2px 8px;
+}
+
+/* =========================================================
+   2. RESET
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 6.25rem;
+}
+
+body {
+  margin: 0;
+  background: var(--c-bg);
+  color: var(--c-ink);
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--c-accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   3. PRYMITYWY UKŁADU
+   ========================================================= */
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: clamp(3.5rem, 9vw, 7rem); }
+.section--alt { background: var(--c-bg-alt); }
+
+/* Barwne pasy sekcji. Jasne tło zostaje wyłącznie tam, gdzie służy
+   czytaniu: „O nas", karta dań i kontakt z mapą. Reszta niesie kolor. */
+.section--red   { background: var(--c-accent-fill); color: var(--c-on-dark); }
+.section--olive { background: var(--p-oliva);       color: var(--c-on-dark); }
+
+.section--red .section__eyebrow,
+.section--olive .section__eyebrow,
+.section--red .section__title,
+.section--olive .section__title { color: var(--c-on-dark); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Markiza — pionowe pasy pomidora i bazylii, jak płótno nad wejściem
+   do knajpy. Podstawowy separator sekcji. */
+.stripe-band {
+  height: 18px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--c-accent-fill) 0 18px,
+    var(--c-bg) 18px 36px,
+    var(--c-accent-2-fill) 36px 54px,
+    var(--c-bg) 54px 72px
+  );
+  border-block: 2px solid var(--c-ink);
+}
+
+/* Szachownica — ukłon w stronę obrusu. Używana oszczędnie. */
+.checker-band {
+  height: 26px;
+  background-color: var(--c-accent-fill);
+  background-image:
+    linear-gradient(45deg, var(--c-on-dark) 25%, transparent 25%, transparent 75%, var(--c-on-dark) 75%),
+    linear-gradient(45deg, var(--c-on-dark) 25%, transparent 25%, transparent 75%, var(--c-on-dark) 75%);
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
+}
+
+/* Podwójny hairline w pomidorze — chwyt prosto z retro etykiety. */
+.rule-double {
+  border: 0;
+  height: 7px;
+  margin: 0;
+  border-top: 2px solid var(--c-accent-fill);
+  border-bottom: 2px solid var(--c-accent-fill);
+  background: transparent;
+}
+
+/* Skrypt — tylko do sygnatur i nagłówków działów karty. */
+.script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* =========================================================
+   4. TYPOGRAFIA
+   ========================================================= */
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;   /* wersaliki wymagają rozstrzelenia */
+  line-height: 0.92;
+  margin: 0;
+}
+
+.section__eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--c-accent);
+  margin: 0 0 var(--space-3);
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  font-size: clamp(2rem, 5.5vw, 3.5rem);
+  margin: 0 0 var(--space-5);
+}
+
+.lead {
+  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  color: var(--c-ink-soft);
+  max-width: 58ch;
+}
+
+/* =========================================================
+   5. PRZYCISKI
+   ========================================================= */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.75rem 1.75rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-button);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.button--primary {
+  background: var(--c-accent-solid);
+  color: #fff;
+  box-shadow: var(--shadow-button);
+}
+.button--primary:hover { background: var(--c-ink); }
+
+.button--ghost {
+  background: transparent;
+  border-color: currentColor;
+}
+.button--ghost:hover {
+  background: var(--c-on-dark);
+  color: var(--c-ink);
+}
+
+/* =========================================================
+   6. NAGŁÓWEK
+   ========================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--c-bg-nav);
+  color: var(--c-nav-ink);
+  border-bottom: 2px solid var(--c-ink);
+}
+
+.site-header__inner {
+  /* Marka jest wyjęta z układu (pozycja bezwzględna), więc wysokość paska
+     nie zależy od pieczęci — pieczęć może swobodnie zwisać poniżej. */
+  position: relative;
+  /* Trzy strefy: nawigacja | zarezerwowany środek | akcje.
+     Środkowa kolumna trzyma szerokość pieczęci, więc żadna strefa
+     na nią nie wchodzi. Wcześniej pieczęć była tylko pozycjonowana
+     bezwzględnie i przełącznik języka nachodził na nią o 23 px. */
+  display: grid;
+  grid-template-columns: 1fr var(--seal-space) 1fr;
+  align-items: center;
+  gap: var(--space-4);
+  min-height: 5.5rem;
+  --seal-space: 168px;
+}
+
+/* Lewa strefa: nawigacja. Język i rezerwacja idą na prawo. */
+.site-header__lead {
+  grid-column: 1;
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.site-header__spacer  { grid-column: 2; }
+.site-header__actions { grid-column: 3; justify-self: end; }
+
+.site-header__brand {
+  position: absolute;
+  left: 50%;
+  bottom: -52px;              /* zwis pod krawędź paska */
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Napis znika z paska: wycentrowana pieczęć niesie nazwę w otoku,
+   a hero krzyczy ją jeszcze raz. Zostaje dla czytników ekranu. */
+.site-header__wordmark {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.site-header__seal {
+  /* Pieczęć wychodzi poniżej paska. Ujemny margines dolny sprawia,
+     że nie podnosi jego wysokości — wisi nad treścią jak lakowa pieczęć.
+     Kremowy pierścień oddziela ją od czerwieni hero pod spodem. */
+  width: 132px; height: 132px;
+  padding: 0;
+  border: 0;
+  background: var(--c-bg-nav);
+  /* Rysunek wypełnia koło do krawędzi. Obrys przylega do niego z zewnątrz:
+     najpierw ciemna kreska tej samej grubości co ta pod paskiem, potem
+     kremowa obwódka oddzielająca pieczęć od czerwieni hero. */
+  box-shadow: 0 0 0 2px var(--c-ink), 0 0 0 9px var(--c-bg-nav);
+  position: relative;
+  z-index: 2;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+/* Jedna linia. Druga linia z adresem podnosiła pasek o kilkanaście pikseli,
+   a powtarzała to, co i tak krzyczy nagłówek hero i sekcja kontaktu. */
+.site-header__wordmark {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.site-nav {
+  display: flex;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  text-decoration: none;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-block: 0.35rem;
+  border-bottom: 1px solid transparent;
+}
+.site-nav a:hover { border-bottom-color: currentColor; }
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+/* Wszystkie kontrolki paska mają jedną wysokość — inaczej lewa i prawa
+   strona wyglądają jak z dwóch różnych projektów. */
+.site-header .button,
+.nav-toggle,
+.lang-switch {
+  min-height: 2.5rem;
+  height: 2.5rem;
+  padding-block: 0;
+}
+
+/* Etykieta przycisku nigdy nie łamie się na dwie linie — w węższej
+   prawej strefie „REZERWUJ STOLIK" rozpadało się na dwa wiersze. */
+.site-header .button { white-space: nowrap; }
+
+/* Poniżej 1040 px prawa strefa mieści tylko jedną kontrolkę: polskie
+   „REZERWUJ STOLIK" (179 px) razem z przełącznikiem daje 263 px przy
+   strefie szerokiej na 232 px. Rezerwacja schodzi do rozwijanej nawigacji. */
+@media (max-width: 1040px) {
+  .site-header__actions .button { display: none; }
+}
+
+/* przełącznik języka */
+.lang-switch {
+  display: flex;
+  border: 1px solid color-mix(in srgb, var(--c-nav-ink) 45%, transparent);
+  border-radius: var(--radius-button);
+  overflow: hidden;
+}
+.lang-switch button {
+  background: none;
+  border: 0;
+  padding: 0.3rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  /* 0.6 dawało efektywnie ok. 4,0:1 na zielonym pasku — poniżej progu AA */
+  opacity: 0.75;
+}
+.lang-switch button[aria-pressed="true"] {
+  background: var(--c-nav-ink);
+  color: var(--c-bg-nav);
+  opacity: 1;
+}
+
+.nav-toggle { display: none; }
+
+/* =========================================================
+   7. HERO
+   ========================================================= */
+/* Hero: po lewej pomidorowy klin ścięty po skosie, po prawej
+   zdjęcie wychodzące na krawędź ekranu — bez ramki i bez zaokrągleń. */
+.hero {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--c-bg);
+}
+@media (min-width: 900px) {
+  .hero { grid-template-columns: 1.05fr 1fr; }
+}
+
+.hero__wedge {
+  position: relative;
+  z-index: 4;   /* treść klina zawsze nad ozdobnikami — te wychodzą zza czerwieni */
+  background: var(--c-accent-fill);
+  color: var(--c-bg);
+  padding: clamp(6.25rem, 8vw, 10rem) var(--gutter) clamp(3rem, 6vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 900px) {
+  .hero__wedge {
+    /* ukośne ścięcie prawej krawędzi — klin z referencji */
+    clip-path: polygon(0 0, 100% 0, calc(100% - 90px) 100%, 0 100%);
+    padding-right: calc(var(--gutter) + 90px);
+    padding-left: max(var(--gutter), calc((100vw - var(--content-max)) / 2 + var(--gutter)));
+  }
+}
+
+.hero__script {
+  font-family: var(--font-script);
+  font-size: clamp(3rem, 8.5vw, 7rem);
+  line-height: 0.85;
+  margin: 0 0 0.15em;
+  rotate: -5deg;
+  transform-origin: left bottom;
+  color: var(--c-bg);
+  text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.18);
+}
+
+.hero__title {
+  font-size: clamp(2rem, 4.6vw, 3.5rem);
+  color: var(--c-bg);
+}
+.hero__title .hero__line-2 { display: block; }
+
+.hero__lead {
+  margin: var(--space-5) 0 var(--space-6);
+  max-width: 44ch;
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  color: var(--c-bg);
+}
+
+.hero__photo {
+  position: relative;
+  margin: 0;
+  min-height: clamp(280px, 46vw, 520px);
+}
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  min-height: clamp(280px, 46vw, 520px);
+  object-fit: cover;
+}
+
+/* naklejka-stempel przyklejona do rogu kadru */
+.sticker {
+  position: absolute;
+  right: clamp(0.75rem, 3vw, 2rem);
+  bottom: clamp(0.75rem, 3vw, 2rem);
+  width: clamp(94px, 13vw, 132px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--c-accent);   /* ciemniejszy fiolet — biały tekst 7,5:1 */
+  color: #fff;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  line-height: 1.15;
+  box-shadow: var(--shadow-card);
+  rotate: -8deg;
+  border: 2px solid var(--c-bg);
+  outline: 1px solid var(--c-accent);
+  outline-offset: 3px;
+}
+.sticker__score {
+  display: block;
+  font-size: clamp(1.375rem, 2.6vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.sticker__label {
+  display: block;
+  max-width: 8ch;          /* trzyma etykietę wewnątrz okręgu */
+  margin: 0.2rem auto 0;
+  font-size: 0.5625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+}
+
+/* =========================================================
+   8. PASEK STEMPLI
+   ========================================================= */
+.stamps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stamp {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.stamp__ring {
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  outline: 1.5px solid currentColor;
+  outline-offset: 5px;
+  display: grid;
+  place-content: center;
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+/* Na barwnym pasie obręcze dziedziczą kolor tekstu sekcji — czerwona
+   obręcz na oliwce miałaby 1,4:1 i po prostu by zniknęła. */
+
+.stamp__text {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  line-height: 1.4;
+  max-width: 20ch;
+}
+
+/* =========================================================
+   9. O NAS
+   ========================================================= */
+.about__grid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .about__grid { grid-template-columns: 1fr 1fr; }
+}
+
+.about__media {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.about__media img {
+  width: 100%;
+  height: clamp(260px, 40vw, 460px);
+  object-fit: cover;
+  object-position: center 62%;   /* kadr na wylot pieca, nie na kopułę */
+}
+
+.about__body p { margin: 0 0 var(--space-4); }
+
+.pull-quote {
+  margin: var(--space-6) 0 0;
+  padding-left: var(--space-5);
+  border-left: 3px solid var(--c-accent-fill);
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+  line-height: 1.3;
+  font-style: italic;
+}
+.pull-quote footer {
+  margin-top: var(--space-3);
+  font-family: var(--font-display);
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--c-ink-soft);
+}
+
+/* =========================================================
+   10. MENU
+   ========================================================= */
+.menu__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-7);
+  padding: 0;
+  list-style: none;
+}
+
+.menu__tab {
+  background: transparent;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-button);
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+.menu__tab:hover { border-color: var(--c-ink); }
+.menu__tab[aria-selected="true"] {
+  background: var(--c-ink);
+  border-color: var(--c-ink);
+  color: var(--c-on-dark);
+}
+
+/* Bez JS wszystkie panele są widoczne — menu musi być w całości
+   czytelne i indeksowalne. Ukrywanie włącza dopiero skrypt przez .js */
+.menu__panel + .menu__panel { margin-top: var(--space-8); }
+.js .menu__panel[hidden] { display: none; }
+
+.menu__panel-title {
+  font-family: var(--font-script);
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+  font-weight: 400;
+  line-height: 0.95;
+  margin: 0 0 var(--space-5);
+  color: var(--c-accent-fill);
+  rotate: -1.5deg;
+  transform-origin: left center;
+}
+
+/* Podsekcje wewnątrz zakładki Napoje */
+.menu__subtitle {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--c-accent-2);
+  margin: var(--space-7) 0 var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--c-line-soft);
+}
+.menu__subtitle:first-of-type { margin-top: 0; }
+
+.dishes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-5);
+}
+@media (min-width: 820px) {
+  .dishes { grid-template-columns: 1fr 1fr; column-gap: clamp(2rem, 5vw, 4rem); }
+}
+
+.dish__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.dish__name {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.dish__leader {
+  flex: 1 1 auto;
+  min-width: 1.5rem;
+  border-bottom: 1px dotted var(--c-line);
+  transform: translateY(-0.3em);
+}
+
+.dish__meta {
+  flex-shrink: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.dish__weight {
+  font-weight: 400;
+  color: var(--c-ink-soft);
+  font-size: 0.8125rem;
+}
+
+.dish__desc {
+  margin: var(--space-1) 0 0;
+  font-size: 0.9375rem;
+  color: var(--c-ink-soft);
+  line-height: 1.45;
+}
+
+/* angielski opis kursywą pod polskim — dokładnie jak w drukowanej karcie */
+.dish__desc--en {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--c-accent);
+  opacity: 0.85;
+}
+
+.dish__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+
+/* Tekst znaczników jest zawsze w kolorze tuszu — barwne tło samo
+   rozróżnia kategorie, a kolorowy tekst na jasnym tincie schodził
+   do ok. 3:1 przy rozmiarze 10px. */
+.tag {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-button);
+  background: color-mix(in srgb, var(--c-accent-2-fill) 40%, transparent);
+  color: var(--c-ink);
+  white-space: nowrap;
+}
+.tag--chef {
+  background: color-mix(in srgb, var(--c-accent-fill) 40%, transparent);
+}
+.tag--spicy {
+  background: color-mix(in srgb, #B5623F 35%, transparent);
+}
+
+/* zwijana pełna karta alkoholi — <details> działa bez JS */
+.spirits {
+  margin-top: var(--space-8);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-card);
+  padding: var(--space-5);
+  background: var(--c-bg);
+}
+.spirits > summary {
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--c-accent);
+}
+.spirits__grid {
+  margin-top: var(--space-6);
+  display: grid;
+  gap: var(--space-6) clamp(2rem, 5vw, 4rem);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.spirits__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9375rem;
+}
+.spirits__list li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  padding-block: 0.2rem;
+}
+.spirits__list li span:first-child { flex-shrink: 1; }
+.spirits__list li b {
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+/* drobny druk z końca karty */
+.menu__fineprint {
+  margin-top: var(--space-8);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--c-line-soft);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: var(--c-ink-soft);
+  max-width: 78ch;
+}
+.menu__fineprint p { margin: 0 0 var(--space-2); }
+
+/* =========================================================
+   11. GALERIA
+   ========================================================= */
+/* Pełnoszerokie pasmo zdjęciowe z etykietą wchodzącą na kadr
+   od prawej krawędzi — chwyt „NEW ARRIVALS" z referencji. */
+.band {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-block: 3px solid var(--c-ink);
+}
+.band img {
+  width: 100%;
+  height: clamp(200px, 30vw, 380px);
+  object-fit: cover;
+}
+.band__label {
+  position: absolute;
+  right: 0;
+  bottom: clamp(1rem, 4vw, 2.75rem);
+  margin: 0;
+  padding: 0.3em 0.7em 0.3em 1.1em;
+  background: var(--c-accent-fill);
+  color: var(--c-bg);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  font-size: clamp(1.375rem, 4.5vw, 3.25rem);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+@media (min-width: 900px) {
+  /* sześć kadrów w dwóch równych rzędach */
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+}
+.gallery figure {
+  margin: 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  background: var(--c-bg-alt);
+}
+.gallery img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: scale 0.4s ease;
+}
+.gallery figure:hover img { scale: 1.04; }
+
+/* =========================================================
+   12. SEKCJA CIEMNA
+   ========================================================= */
+.feature {
+  background: var(--c-bg-feature);
+  color: var(--c-on-dark);
+}
+.feature__grid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .feature__grid { grid-template-columns: 1fr 1fr; }
+}
+.feature__media {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+.feature__media img {
+  width: 100%;
+  height: clamp(260px, 38vw, 440px);
+  object-fit: cover;
+}
+.feature .section__eyebrow { color: var(--c-on-dark); }
+.feature p { color: color-mix(in srgb, var(--c-on-dark) 82%, transparent); }
+
+/* Czerwony przycisk miałby tu 1,0:1 na czerwieni i 1,4:1 na oliwce —
+   w obu wariantach tła rezerwacja musi być kremowa. */
+.feature .button--primary {
+  background: var(--c-on-dark);
+  color: var(--c-accent-solid);
+}
+.feature .button--primary:hover {
+  background: var(--c-ink);
+  color: var(--c-on-dark);
+}
+
+/* =========================================================
+   13. KONTAKT
+   ========================================================= */
+.contact__grid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .contact__grid { grid-template-columns: 1fr 1fr; }
+}
+
+.hours {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--space-6);
+}
+.hours th, .hours td {
+  text-align: left;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--c-line-soft);
+  font-size: 0.9375rem;
+}
+.hours th { font-weight: 500; }
+.hours td {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.contact__details { font-style: normal; }
+.contact__details a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.contact__row {
+  display: flex;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--c-line-soft);
+}
+.contact__row dt {
+  flex: 0 0 7.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--c-accent);
+  padding-top: 0.15rem;
+}
+.contact__row dd { margin: 0; }
+
+.map {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  border: 0;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+/* =========================================================
+   14. STOPKA
+   ========================================================= */
+.site-footer {
+  background: var(--c-accent-fill);
+  color: var(--c-on-dark);
+  padding-top: clamp(3rem, 7vw, 5rem);
+}
+
+.site-footer__cols {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding-bottom: var(--space-7);
+  border-bottom: 1px solid color-mix(in srgb, var(--c-on-dark) 35%, transparent);
+}
+
+.site-footer h2 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  /* Pełne krycie: kremowy na czerwieni ma 4,70:1, więc każde ściszenie
+     przezroczystością zbija go poniżej AA. Hierarchię niesie krój. */
+  color: var(--c-on-dark);
+  margin: 0 0 var(--space-3);
+}
+.site-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9375rem;
+  line-height: 2;
+}
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* wielki wordmark na całą szerokość — zamknięcie strony */
+/* Skrypt nad wordmarkiem — podpis nad szyldem. */
+.footer-script {
+  margin: clamp(2rem, 5vw, 3.5rem) 0 -0.12em;
+  text-align: center;
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  line-height: 1;
+  color: var(--c-on-dark);
+  rotate: -2deg;
+}
+
+/* Jedna linia wypełniająca szerokość ekranu — rozmiar liczony z vw,
+   żeby wordmark zawsze sięgał obu krawędzi i nigdy się nie łamał. */
+.footer-wordmark {
+  display: block;
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.82;
+  font-size: 16.2vw;
+  white-space: nowrap;
+  text-align: center;
+  color: var(--c-on-dark);
+  overflow: hidden;
+}
+
+.site-footer__legal {
+  padding-block: var(--space-5);
+  font-size: 0.75rem;
+  color: var(--c-on-dark);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: space-between;
+}
+
+/* =========================================================
+   15. NAWIGACJA MOBILNA
+   ========================================================= */
+@media (max-width: 1040px) {
+  html { scroll-padding-top: 5.75rem; }
+
+  .site-header__inner { min-height: 5rem; --seal-space: 148px; }
+  .site-header__brand { bottom: -44px; }
+  .site-header__seal { width: 112px; height: 112px; }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+    background: none;
+    border: 1px solid color-mix(in srgb, var(--c-nav-ink) 45%, transparent);
+    border-radius: var(--radius-button);
+    padding: 0.4rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+  }
+
+  .site-nav {
+    display: none;
+    order: 10;
+    flex-basis: 100%;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding-bottom: var(--space-4);
+    border-top: 1px solid color-mix(in srgb, var(--c-nav-ink) 25%, transparent);
+  }
+  /* Panel rozwijany pod paskiem zamiast drugiego rzędu w środku paska —
+     dzięki temu otwarcie nawigacji nie zmienia wysokości nagłówka. */
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--c-bg-nav);
+    border-bottom: 2px solid var(--c-ink);
+    padding: var(--space-3) var(--gutter) var(--space-4);
+    margin: 0;
+  }
+  .site-nav.is-open { display: flex; }
+  .site-nav a {
+    padding-block: 0.7rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--c-nav-ink) 12%, transparent);
+  }
+
+}
+
+/* Trzy kreski hamburgera; na szerokim ekranie przycisku i tak nie widać. */
+.nav-toggle__bars {
+  display: none;
+  width: 16px;
+  height: 2px;
+  background: currentColor;
+  box-shadow: 0 -5px 0 currentColor, 0 5px 0 currentColor;
+}
+
+@media (max-width: 640px) {
+  .nav-toggle { padding-inline: 0.6rem; }
+
+  /* Przy 375 px suma szerokości nie mieściła się w pasku i przełącznik
+     języka wyjeżdżał poza ekran. Skracamy wszystkie trzy elementy:
+     wordmark traci „Trattoria", a przycisk nawigacji — słowo na rzecz kresek. */
+  .site-header__inner { min-height: 4.5rem; --seal-space: 118px; }
+  .site-header__brand { bottom: -34px; }
+  .site-header__seal { width: 88px; height: 88px; }
+
+
+  .nav-toggle { padding: 0.5rem 0.6rem; }
+  .nav-toggle__bars { display: block; }
+  .nav-toggle__label { display: none; }
+}
+
+/* Rezerwacja w rozwijanej nawigacji pojawia się dopiero tam, gdzie znika
+   z paska (poniżej 1040 px). Wyżej dublowanie byłoby błędem. */
+.site-nav__cta { display: none; }
+
+@media (max-width: 1040px) {
+  .site-nav__cta {
+    display: block;
+    margin-top: var(--space-3);
+    border: 1px solid currentColor !important;
+    border-radius: var(--radius-button);
+    text-align: center;
+    font-weight: 700;
+  }
+}
