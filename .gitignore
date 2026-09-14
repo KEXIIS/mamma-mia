@@ -9,3 +9,6 @@ Desktop.ini
 # Pliki tymczasowe i podglądowe
 _podglad*
 *.tmp
+
+.claude
+
