@@ -21,7 +21,7 @@
 
   <!-- ?v= wymusza pobranie nowej wersji po aktualizacji strony.
        Przy każdym wdrożeniu zmian w css/ lub js/ podnieś numer. -->
-  <link rel="stylesheet" href="css/style.css?v=43">
+  <link rel="stylesheet" href="css/style.css?v=45">
 
   <!-- Ustawiane przed pierwszym malowaniem: bez tej klasy CSS pokazuje
        wszystkie panele menu naraz (tryb bez JavaScriptu). -->
@@ -51,7 +51,8 @@
           <a href="#menu" data-en="Menu">Menu</a>
           <a href="#galeria" data-en="Gallery">Galeria</a>
           <a href="#taras" data-en="Terrace">Taras</a>
-          <a href="#kontakt" data-en="Contact">Kontakt</a>
+          <a href="#bony" data-en="Gift cards">Bony</a>
+        <a href="#kontakt" data-en="Contact">Kontakt</a>
           <!-- Widoczny tylko na telefonie, gdzie przycisk rezerwacji
                nie mieści się w pasku nagłówka. -->
           <a class="site-nav__cta"
@@ -1496,6 +1497,38 @@
 
     <div class="stripe-band" aria-hidden="true"></div>
 
+    <!-- ===================== BONY ===================== -->
+    <section class="section section--red" id="bony">
+      <div class="container bony">
+        <div>
+          <p class="section__eyebrow" data-en="Gift cards">Bony upominkowe</p>
+          <h2 class="section__title" data-en="Give someone an evening">Podaruj komuś wieczór</h2>
+          <p data-en="A gift card to Mamma Mia works for family, friends and colleagues alike. Choose any amount and buy it online in a few minutes — or ask for one at the restaurant.">
+            Bon do Mamma Mia sprawdza się dla rodziny, przyjaciół i współpracowników.
+            Wybierasz dowolną kwotę i kupujesz online w kilka minut — albo pytasz o niego
+            na miejscu, w restauracji.
+          </p>
+          <p class="bony__drobne" data-en="Card validity and current terms are shown during checkout. Vouchers are handled by CoverManager, the same system as our bookings.">
+            Termin ważności i aktualne warunki zobaczysz w trakcie zakupu. Bony obsługuje
+            CoverManager, ten sam system co nasze rezerwacje.
+          </p>
+          <a class="button button--primary"
+             href="https://www.covermanager.com/eco/buy_products/restaurante-mammamia/polish"
+             data-href-en="https://www.covermanager.com/eco/buy_products/restaurante-mammamia/english"
+             target="_blank" rel="noopener"
+             data-en="Buy a gift card">Kup bon online</a>
+        </div>
+
+        <figure class="bony__media">
+          <img src="images/spaghetti-burrata.webp"
+               alt="Spaghetti w sosie pomidorowym z burratą i kieliszek białego wina"
+               width="549" height="823" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <div class="stripe-band" aria-hidden="true"></div>
+
     <!-- ===================== KONTAKT ===================== -->
     <section class="section" id="kontakt">
       <div class="container">
@@ -1637,6 +1670,6 @@
   }
   </script>
 
-  <script src="js/script.js?v=43" defer></script>
+  <script src="js/script.js?v=45" defer></script>
 </body>
 </html>

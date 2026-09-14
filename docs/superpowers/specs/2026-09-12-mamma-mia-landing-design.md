@@ -22,8 +22,8 @@ są temu celowi.
 Jedna statyczna strona (one-pager) w HTML/CSS/JS, bez frameworka i bez kroku budowania —
 zgodnie z konwencją projektu `Strony/Kancelaria`.
 
-Poza zakresem: system rezerwacji (restauracja ma już wdrożony CoverManager — podlinkowujemy),
-płatności i bony (mają Stripe), CMS, blog, sklep.
+Poza zakresem: system rezerwacji i sprzedaż bonów (restauracja ma już wdrożony
+CoverManager — podlinkowujemy oba), CMS, blog.
 
 ## 3. Ustalenia wejściowe
 
@@ -68,7 +68,16 @@ Restauracja ma realną identyfikację, której nie ma na stronie:
 ### 3.4 Systemy zewnętrzne
 
 - **CoverManager** — rezerwacje, już wdrożone; przyciski „Rezerwuj stolik" prowadzą tam
-- **Stripe** — bony/sklep, poza zakresem tej strony
+- **Stripe** — obsługa płatności wewnątrz CoverManagera, poza zakresem tej strony
+
+**„Sklep" na starej stronie to sprzedaż bonów.** Podstrona `310,sklep.html` osadzała ramkę
+`covermanager.com/eco/buy_products/restaurante-mammamia/polish` — czterokrokowy koszyk
+z jednym produktem: kartą podarunkową. Osobna podstrona `296,bony-upominkowe.html` opisywała
+te same bony słowami. Na nowej stronie obie role pełni jedna sekcja **#bony**, z przyciskiem
+prowadzącym do tego samego koszyka CoverManagera (adresy `/polish` i `/english`).
+
+Ramka nie jest osadzana: czterokrokowa płatność wewnątrz one-pagera czyta się gorzej niż
+przejście do koszyka, a osadzenie wciąga do strony ciasteczka zewnętrznego dostawcy.
 
 ## 4. Decyzje architektoniczne
 
@@ -403,6 +412,10 @@ ale rezerwacja musi zostać najgłośniejszym elementem strony.
 
 8. **Kontakt** — godziny otwarcia w tabeli (pon-czw 13–22, pt 13–23, sob 12–23, nd 12–22),
    adres Karmelicka 14, telefon +48 12 430 04 92 jako `tel:`, mapa, dojazd.
+
+8a. **Bony upominkowe** — pas na czerwieni, dwie kolumny: tekst z przyciskiem
+   „Kup bon online" prowadzącym do koszyka CoverManagera, obok zdjęcie. Zastępuje
+   dwie podstrony starego serwisu: „Sklep" i „Bony upominkowe".
 
 9. **Stopka** — linki, siostrzane lokale grupy, nad nimi czerwony skrypt „Trattoria"
    nachodzący na wielki wordmark „MAMMA MIA" wypełniający szerokość viewportu w jednej linii

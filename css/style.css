@@ -926,6 +926,50 @@ button { font: inherit; color: inherit; }
 }
 
 /* =========================================================
+   12a. BONY UPOMINKOWE
+   ========================================================= */
+.bony {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .bony { grid-template-columns: 1.15fr 1fr; }
+}
+
+/* Pełne krycie: kremowy na czerwieni ma 4,70:1, więc każde ściszenie
+   przezroczystością zbija go poniżej AA (92% dawało 4,19). */
+.bony p { color: var(--c-on-dark); }
+
+.bony__drobne {
+  font-size: 0.875rem;
+  margin-bottom: var(--space-6);
+}
+
+.bony__media {
+  margin: 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.bony__media img {
+  width: 100%;
+  height: clamp(240px, 34vw, 380px);
+  object-fit: cover;
+}
+
+/* Czerwony przycisk na czerwonym tle nie zadziała — jak w sekcji tarasu. */
+.section--red .button--primary {
+  background: var(--c-on-dark);
+  color: var(--c-accent-solid);
+}
+.section--red .button--primary:hover {
+  background: var(--c-ink);
+  color: var(--c-on-dark);
+}
+
+/* =========================================================
    13. KONTAKT
    ========================================================= */
 .contact__grid {
