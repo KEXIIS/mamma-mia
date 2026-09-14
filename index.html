@@ -21,7 +21,7 @@
 
   <!-- ?v= wymusza pobranie nowej wersji po aktualizacji strony.
        Przy każdym wdrożeniu zmian w css/ lub js/ podnieś numer. -->
-  <link rel="stylesheet" href="css/style.css?v=45">
+  <link rel="stylesheet" href="css/style.css?v=46">
 
   <!-- Ustawiane przed pierwszym malowaniem: bez tej klasy CSS pokazuje
        wszystkie panele menu naraz (tryb bez JavaScriptu). -->
@@ -179,9 +179,17 @@
             bo nic nie stoi pod lampą.
           </p>
 
-          <blockquote class="pull-quote" lang="en">
+          <!-- Dwie realne opinie z Google: polska dla wersji PL, angielska dla EN.
+               Przełącza je CSS po atrybucie lang na <html>, który ustawia skrypt. -->
+          <blockquote class="pull-quote" data-only="pl">
+            Przepyszna pizza – idealne ciasto, składniki bardzo dobrej jakości
+            i fajnie skomponowane połączenia smaków.
+            <footer>Opinia w Google</footer>
+          </blockquote>
+
+          <blockquote class="pull-quote" data-only="en" lang="en">
             Believe the hype. The food here is insane. You have to try the lasagne.
-            <footer data-en="Google review">Opinia w Google</footer>
+            <footer>Google review</footer>
           </blockquote>
         </div>
 
@@ -1670,6 +1678,6 @@
   }
   </script>
 
-  <script src="js/script.js?v=45" defer></script>
+  <script src="js/script.js?v=46" defer></script>
 </body>
 </html>

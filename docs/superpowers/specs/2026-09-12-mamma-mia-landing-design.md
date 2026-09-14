@@ -390,8 +390,16 @@ ale rezerwacja musi zostać najgłośniejszym elementem strony.
    „Karmelicka 14 — 5 minut od Rynku", „Taras pod lampkami", „Wszystko świeże, na zamówienie".
 
 4. **O nas** — dwie kolumny: zdjęcie wnętrza i tekst. Obok wyrwany wielki cytat z prawdziwej
-   opinii Google: „Believe the hype. The food here is insane." Wzmianka o przynależności do
-   niezależnej krakowskiej grupy (La Campana, Kogel-Mogel) — nie franczyza.
+   opinii Google — **osobnej dla każdego języka**, bo polski gość i turysta reagują na co innego.
+   PL: „Przepyszna pizza – idealne ciasto, składniki bardzo dobrej jakości i fajnie skomponowane
+   połączenia smaków." EN: „Believe the hype. The food here is insane. You have to try the lasagne."
+   Obie są prawdziwe i pobrane z Google Maps; **nie wolno ich wymyślać ani tłumaczyć jednej na drugą**,
+   bo to byłaby spreparowana opinia. Wzmianka o przynależności do niezależnej krakowskiej grupy
+   (La Campana, Kogel-Mogel) — nie franczyza.
+
+   Mechanizm: dwa bloki z atrybutem `data-only="pl"` / `data-only="en"`, przełączane w CSS po
+   `lang` na `<html>`. Skrypt i18n podmienia tylko `textContent` elementów bez dzieci, więc cytat
+   ze stopką autora nie dałby się przełączyć jego mechanizmem.
 
 5. **Menu** — zakładki: Antipasti · Zuppe · Focaccia · Insalate · Pizza · Pasta e risotto ·
    Pesce · Carne · Contorni · Dolci · Napoje. Zakładka „Napoje" grupuje w sobie wszystkie
