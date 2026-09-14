@@ -137,7 +137,31 @@
   }
 
   /* ---------------------------------------------------------
-     4. Rok w stopce
+     4. Mapa na żądanie
+
+     Osadzona ramka Google Maps ciągnęła około 890 kB skryptów
+     i 1,5 s pracy głównego wątku, zanim ktokolwiek na nią spojrzał.
+     Atrapa zajmuje to samo miejsce, więc podmiana nie przesuwa układu.
+     --------------------------------------------------------- */
+  var atrapaMapy = document.querySelector(".map-facade");
+  var przyciskMapy = document.querySelector("[data-pokaz-mape]");
+
+  if (atrapaMapy && przyciskMapy) {
+    przyciskMapy.addEventListener("click", function () {
+      var ramka = document.createElement("iframe");
+      ramka.className = "map";
+      ramka.src = atrapaMapy.dataset.mapa;
+      ramka.title = document.documentElement.lang === "en"
+        ? "Map — Karmelicka 14, Cracow"
+        : "Mapa — Karmelicka 14, Kraków";
+      ramka.loading = "lazy";
+      ramka.referrerPolicy = "no-referrer-when-downgrade";
+      atrapaMapy.replaceWith(ramka);
+    });
+  }
+
+  /* ---------------------------------------------------------
+     5. Rok w stopce
      --------------------------------------------------------- */
   var rok = document.getElementById("rok");
   if (rok) rok.textContent = String(new Date().getFullYear());

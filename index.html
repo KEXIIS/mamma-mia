@@ -1566,11 +1566,23 @@
           </div>
 
           <div>
-            <iframe class="map"
-                    src="https://www.google.com/maps?q=Karmelicka%2014,%2031-128%20Krak%C3%B3w&amp;output=embed"
-                    title="Mapa — Karmelicka 14, Kraków"
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- Atrapa mapy. Osadzona ramka Google ciągnęła ~890 KB skryptów
+                 i 1,5 s pracy głównego wątku, zanim ktokolwiek na nią spojrzał.
+                 Prawdziwa mapa ładuje się dopiero po kliknięciu. -->
+            <div class="map-facade" data-mapa="https://www.google.com/maps?q=Karmelicka%2014,%2031-128%20Krak%C3%B3w&amp;output=embed">
+              <p class="map-facade__adres">Karmelicka 14<br>31-128 Kraków</p>
+
+              <button class="button button--primary" type="button" data-pokaz-mape
+                      data-en="Show map">Pokaż mapę</button>
+
+              <p class="map-facade__uwaga" data-en="The map loads from Google and sets its cookies.">
+                Mapa ładuje się z Google i ustawia jego ciasteczka.
+              </p>
+
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Karmelicka+14%2C+31-128+Krak%C3%B3w"
+                 target="_blank" rel="noopener"
+                 data-en="Open in Google Maps">Otwórz w Google Maps</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1665,6 +1677,6 @@
   }
   </script>
 
-  <script src="js/script.js?v=49" defer></script>
+  <script src="js/script.js?v=50" defer></script>
 </body>
 </html>

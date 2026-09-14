@@ -525,6 +525,33 @@ Plik jest w repo, bo zacznie działać po przepięciu na własną domenę, ale d
 sprawią, że strona nie pojawi się w Google — czyli zniweczą główny cel całego projektu
 opisany w sekcji 1.
 
+## 8c. Wydajność — co faktycznie kosztowało
+
+Pierwszy pomiar Lighthouse dał 28 punktów. Po kolejnych poprawkach 80. Kolejność przyczyn
+okazała się inna, niż podpowiadała intuicja.
+
+| Przyczyna | Waga | Naprawa |
+|---|---|---|
+| Kroje z Google Fonts | 7 plików, 243 KB, blokujące | hosting lokalny, preload (5.21) |
+| Logo PNG 144 KB na elemencie 112 px | ciężkie, wcześnie | `logo.webp` 19 KB + osobna favikona 11 KB |
+| Osadzona mapa Google | ~890 KB skryptów, 1,5 s wątku głównego | atrapa ładowana na kliknięcie |
+| Kompresja zdjęć | — | przekodowanie z oryginałów, jakość 74: 508 KB → 383 KB |
+
+**Mapa była największym pojedynczym kosztem**, a nie widać jej w naszych zasobach — ramka jest
+z innego origin, więc jej wnętrze nie pojawia się w `performance.getEntriesByType('resource')`.
+Diagnostyka Lighthouse pokazywała 888 KiB nieużywanego JavaScriptu przy naszym skrypcie ważącym
+2 KB; to była właśnie mapa.
+
+Atrapa ma dokładnie tę samą wysokość co ramka (441 px), więc podmiana nie przesuwa układu.
+Przy okazji strona nie ustawia ciasteczek Google, dopóki gość sam nie kliknie.
+
+**Czego nie da się naprawić na GitHub Pages:** ostrzeżenie o czasie życia cache. Pages
+ustawia własne nagłówki i nie pozwala ich nadpisać. Zniknie po przeniesieniu na hosting
+docelowy klienta.
+
+**Uwaga o wyniku SEO:** spadł do 63, bo blokujemy indeksowanie meta tagiem (8b). To koszt
+wersji demonstracyjnej, nie usterka — po usunięciu blokady wraca do 100.
+
 ## 9. Świadomie pominięte
 
 - formularz rezerwacji (CoverManager już działa)
