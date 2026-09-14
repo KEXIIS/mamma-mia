@@ -26,9 +26,13 @@
 
   <link rel="icon" href="images/favicon.png" sizes="64x64">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Petrona:ital,wght@0,600;1,400&family=Yellowtail&display=swap" rel="stylesheet">
+  <!-- Kroje hostowane lokalnie (patrz sekcja 0 w style.css).
+       Preload tylko dla tego, co widać od razu: Archivo niesie cały
+       interfejs, Yellowtail skrypt „Mamma Mia" w hero. Petrona jest
+       poniżej pierwszego ekranu, więc czeka na swoją kolej. -->
+  <link rel="preload" as="font" type="font/woff2" href="fonts/archivo-wght-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/archivo-wght-latin-ext.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/yellowtail-400-latin.woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -1661,6 +1665,6 @@
   }
   </script>
 
-  <script src="js/script.js?v=48" defer></script>
+  <script src="js/script.js?v=49" defer></script>
 </body>
 </html>

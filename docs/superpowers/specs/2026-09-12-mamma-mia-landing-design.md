@@ -176,7 +176,7 @@ rozmywającym akcentem.
 
 ### 5.2 Typografia
 
-Trzy rodziny z Google Fonts:
+Trzy rodziny, **hostowane lokalnie** w katalogu `fonts/` (patrz 5.21):
 
 - **Archivo** (400/500/600/700) — hasła, nagłówki, nawigacja, UI, ceny, znaczniki.
   Zastępuje niedostępny krój Houseplant (DESIGN.md wskazuje Archivo jako substytut).
@@ -189,6 +189,33 @@ Trzy rodziny z Google Fonts:
 Tracking: na wersalikach w dużych rozmiarach **dodatni** `+0.02em` — chwyt z dinnerladies.
 Reguła Houseplanta o ujemnym trackingu przy 45px+ dotyczy tekstu mieszanego i tu nie obowiązuje,
 bo wersaliki zawsze wymagają rozstrzelenia.
+
+### 5.21 Kroje hostowane lokalnie, nie z Google Fonts
+
+Pliki `woff2` leżą w `fonts/`, reguły `@font-face` w sekcji 0 arkusza. Powód jest
+wydajnościowy: znikają dwa obce origin (`fonts.googleapis.com` i `fonts.gstatic.com`),
+czyli dwa komplety DNS + TCP + TLS, a łańcuch krytyczny skraca się o jeden przeskok —
+przeglądarka nie musi najpierw pobrać arkusza Google, żeby poznać adresy plików.
+Dopiero lokalne pliki dają się też sensownie `preload`ować.
+
+**Argument o współdzielonym cache między witrynami jest nieaktualny** — przeglądarki
+partycjonują cache po stronie osadzającej od 2020 roku, więc font pobrany na innej
+stronie i tak nie zostanie ponownie użyty.
+
+Pobierane są tylko potrzebne podzbiory: `latin` i `latin-ext` (polskie znaki),
+bez wietnamskiego. Yellowtail tylko `latin` — służy do „Mamma Mia", „Trattoria"
+i nazw działów karty, same znaki ASCII. Razem 7 plików, 171 KB na dysku, z czego
+pierwsze wejście pobiera 6 (153 KB).
+
+**Archivo to font zmienny.** Jeden plik na podzbiór obsługuje wagi 400–700, więc liczba
+użytych wag nie zmienia wagi pobrania — inaczej niż przy Petronie, gdzie każda odmiana
+to osobny plik.
+
+Preload obejmuje tylko to, co widać od razu: Archivo (`latin` i `latin-ext`) oraz
+Yellowtail. Petrona jest poniżej pierwszego ekranu.
+
+Licencje krojów leżą obok plików — Archivo i Petrona na OFL, Yellowtail na Apache 2.0.
+Obie licencje wymagają, by tekst licencji towarzyszył plikom.
 
 ### 5.3 Chwyty kompozycyjne
 
