@@ -18,20 +18,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Petrona:ital,wght@0,400;0,600;1,400;1,600&family=Yellowtail&display=swap" rel="stylesheet">
-
-  <!-- ?v= wymusza pobranie nowej wersji po aktualizacji strony.
-       Przy każdym wdrożeniu zmian w css/ lub js/ podnieś numer. -->
-  <link rel="stylesheet" href="css/style.css?v=46">
-
-  <!-- Ustawiane przed pierwszym malowaniem: bez tej klasy CSS pokazuje
-       wszystkie panele menu naraz (tryb bez JavaScriptu). -->
+  <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
   <a class="visually-hidden" href="#menu" data-en="Skip to menu">Przejdź do menu</a>
-
-  <!-- ===================== NAGŁÓWEK ===================== -->
   <header class="site-header">
     <div class="container site-header__inner">
 
@@ -53,8 +45,6 @@
           <a href="#taras" data-en="Terrace">Taras</a>
           <a href="#bony" data-en="Gift cards">Bony</a>
         <a href="#kontakt" data-en="Contact">Kontakt</a>
-          <!-- Widoczny tylko na telefonie, gdzie przycisk rezerwacji
-               nie mieści się w pasku nagłówka. -->
           <a class="site-nav__cta"
              href="https://www.covermanager.com/reservation/module_restaurant/restaurante-mammamia/polish"
              data-href-en="https://www.covermanager.com/reservation/module_restaurant/restaurante-mammamia/english"
@@ -85,7 +75,6 @@
 
   <main id="gora">
 
-    <!-- ===================== HERO ===================== -->
     <section class="hero">
 
       <div class="hero__wedge">
@@ -126,7 +115,6 @@
 
     <div class="stripe-band" aria-hidden="true"></div>
 
-    <!-- ===================== STEMPLE ===================== -->
     <section class="section section--olive">
       <div class="container">
         <ul class="stamps">
@@ -152,7 +140,6 @@
 
     <div class="stripe-band" aria-hidden="true"></div>
 
-    <!-- ===================== O NAS ===================== -->
     <section class="section" id="o-nas">
       <div class="container about__grid">
 
@@ -179,8 +166,6 @@
             bo nic nie stoi pod lampą.
           </p>
 
-          <!-- Dwie realne opinie z Google: polska dla wersji PL, angielska dla EN.
-               Przełącza je CSS po atrybucie lang na <html>, który ustawia skrypt. -->
           <blockquote class="pull-quote" data-only="pl">
             Przepyszna pizza – idealne ciasto, składniki bardzo dobrej jakości
             i fajnie skomponowane połączenia smaków.
@@ -196,7 +181,6 @@
       </div>
     </section>
 
-    <!-- ===================== PASMO ===================== -->
     <figure class="band">
       <img src="images/wnetrze-2.webp"
            alt="Sala restauracji z kwiecistą tapetą, drewnianymi stolikami i regałem z winem"
@@ -204,7 +188,6 @@
       <p class="band__label" data-en="Straight from the oven">Prosto z pieca</p>
     </figure>
 
-    <!-- ===================== MENU ===================== -->
     <section class="section section--alt" id="menu">
       <div class="container">
 
@@ -214,9 +197,6 @@
           Każde danie z opisem po polsku i angielsku, gramaturą i ceną. Ceny w złotych.
         </p>
 
-<!-- ============ POCZĄTEK BLOKU MENU ============
-     Pozycje wpisane na stałe w HTML, żeby były widoczne dla wyszukiwarek
-     i czytelne przy wyłączonym JavaScripcie. Edycja cen — tutaj. -->
         <ul class="menu__tabs" role="tablist">
           <li role="presentation"><button class="menu__tab" type="button" role="tab" id="tab-antipasti" aria-controls="panel-antipasti" aria-selected="false">Antipasti</button></li>
           <li role="presentation"><button class="menu__tab" type="button" role="tab" id="tab-zuppe" aria-controls="panel-zuppe" aria-selected="false">Zuppe</button></li>
@@ -1415,8 +1395,6 @@
             </div>
           </details>
         </section>
-<!-- ============ KONIEC BLOKU MENU ============ -->
-
         <div class="menu__fineprint">
           <p data-en="All dishes are prepared from fresh produce to your individual order. Waiting time is approximately 45 minutes.">
             Wszystkie dania przygotowujemy wyłącznie ze świeżych produktów, na Państwa indywidualne
@@ -1441,7 +1419,6 @@
 
     <div class="stripe-band" aria-hidden="true"></div>
 
-    <!-- ===================== GALERIA ===================== -->
     <section class="section section--red" id="galeria">
       <div class="container">
         <p class="section__eyebrow" data-en="Gallery">Galeria</p>
@@ -1472,7 +1449,6 @@
 
     <div class="stripe-band" aria-hidden="true"></div>
 
-    <!-- ===================== SEKCJA CIEMNA ===================== -->
     <section class="section feature" id="taras">
       <div class="container feature__grid">
 
@@ -1505,7 +1481,6 @@
 
     <div class="stripe-band" aria-hidden="true"></div>
 
-    <!-- ===================== BONY ===================== -->
     <section class="section section--red" id="bony">
       <div class="container bony">
         <div>
@@ -1537,7 +1512,6 @@
 
     <div class="stripe-band" aria-hidden="true"></div>
 
-    <!-- ===================== KONTAKT ===================== -->
     <section class="section" id="kontakt">
       <div class="container">
         <p class="section__eyebrow" data-en="Contact">Kontakt</p>
@@ -1591,7 +1565,6 @@
 
   <div class="stripe-band" aria-hidden="true"></div>
 
-  <!-- ===================== STOPKA ===================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__cols">
@@ -1632,7 +1605,6 @@
                  target="_blank" rel="noopener"
                  data-en="Book a table online">Rezerwuj stolik online</a>
             </li>
-            <!-- TODO: uzupełnić realne adresy profili społecznościowych restauracji -->
           </ul>
         </div>
 
