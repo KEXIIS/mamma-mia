@@ -482,6 +482,22 @@ element strony był zależny od przewijania, którego panel podglądu nie obsłu
 jedyny nie dawał się tam zweryfikować. Usunięcie zdejmuje całą tę klasę ryzyka: treść nie ma
 już żadnej drogi do bycia trwale ukrytą.
 
+## 8b. Blokada indeksowania — DO USUNIĘCIA PRZED WDROŻENIEM
+
+Wersja demonstracyjna stoi publicznie na GitHub Pages (`kexiis.github.io/mamma-mia/`).
+Repozytorium jest prywatne, ale **sama strona jest publiczna** — API Pages zwraca
+`"public": true`. Wisi tam komplet zdjęć i pełne menu klienta, z którym nie ma jeszcze umowy.
+
+Indeksowanie blokuje `<meta name="robots" content="noindex, nofollow">` w `index.html`.
+
+**`robots.txt` w tym repozytorium nie działa.** Roboty czytają wyłącznie plik z korzenia
+domeny, czyli `kexiis.github.io/robots.txt`, a strona stoi w podkatalogu `/mamma-mia/`.
+Plik jest w repo, bo zacznie działać po przepięciu na własną domenę, ale dziś jest martwy.
+
+**Przed wdrożeniem u klienta usuń meta tag i `robots.txt`.** Zostawione na produkcji
+sprawią, że strona nie pojawi się w Google — czyli zniweczą główny cel całego projektu
+opisany w sekcji 1.
+
 ## 9. Świadomie pominięte
 
 - formularz rezerwacji (CoverManager już działa)
