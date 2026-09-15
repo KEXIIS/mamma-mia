@@ -1,18 +1,18 @@
 /* =========================================================
    TRATTORIA MAMMA MIA
-   Klimat — włoska pizzeria w Nowym Jorku: ukośne kliny, tłusty skrypt,
+   Klimat: włoska pizzeria w Nowym Jorku: ukośne kliny, tłusty skrypt,
    markiza, szachownica, pełnoszerokie kadry.
    Len i orzech z Houseplanta jako podłoże; pomidor i bazylia jako akcenty.
    ========================================================= */
 
 /* =========================================================
-   0. KROJE PISMA — hostowane lokalnie
+   0. KROJE PISMA, hostowane lokalnie
    Wcześniej szły z Google Fonts. Lokalnie są szybsze: znikają dwa
    obce origin (fonts.googleapis.com i fonts.gstatic.com), czyli dwa
    komplety DNS + TCP + TLS, a łańcuch krytyczny skraca się o jeden
-   przeskok — przeglądarka nie musi najpierw pobrać arkusza Google,
+   przeskok, przeglądarka nie musi najpierw pobrać arkusza Google,
    żeby dowiedzieć się, gdzie leżą pliki. Umożliwia to też preload.
-   Argument o wspólnym cache między witrynami jest nieaktualny —
+   Argument o wspólnym cache między witrynami jest nieaktualny,
    przeglądarki partycjonują cache od 2020 roku.
 
    Archivo to font zmienny: jeden plik na podzbiór obsługuje wagi
@@ -77,7 +77,7 @@
 }
 
 /* =========================================================
-   1. TOKENY — prymitywy → semantyka → komponenty
+   1. TOKENY: prymitywy → semantyka → komponenty
    ========================================================= */
 :root {
   /* -- prymitywy: Houseplant -- */
@@ -86,7 +86,7 @@
   --p-linen:       #F4F1E0;
   --p-graphite:    #464545;
   /* Houseplant podaje tu neutralne #F4F4F4, ale w ciepłej palecie
-     ta szarość czyta się jak brud — ocieplona do piaskowej. */
+     ta szarość czyta się jak brud, ocieplona do piaskowej. */
   --p-sand:        #EFE9D7;
 
   /* -- prymitywy: pomidor i bazylia --
@@ -94,7 +94,7 @@
      Warianty -ink na tekst poniżej 24px (kontrast AA na lnie).
      Wariant -deep pod biały tekst na wypełnieniu. */
   /* Jedna czerwień na wszystkie płaszczyzny. Jaśniejsze #DC4527 dawało
-     kremowemu tekstowi na klinie hero 3,75:1, a bieli 4,26:1 — poniżej progu
+     kremowemu tekstowi na klinie hero 3,75:1, a bieli 4,26:1, poniżej progu
      AA przy 16px niezależnie od krycia. Przyciemnienie naprawia lead i przycisk
      w hero (oba 4,7:1) i przy okazji likwiduje zgrzyt dwóch prawie identycznych
      czerwieni obok siebie. */
@@ -110,13 +110,13 @@
   --c-bg-alt:      var(--p-sand);
   --c-bg-dark:     var(--p-walnut);
   /* Pasek nawigacji osobno od sekcji ciemnej. Ciemny pasek sąsiadujący
-     wprost z pomidorowym klinem konkuruje z nim o uwagę — niezależnie
+     wprost z pomidorowym klinem konkuruje z nim o uwagę, niezależnie
      od tego, czy jest orzechowy czy zielony. Jasny pasek oddaje całą
      siłę uderzenia czerwieni; definiuje go kreska na dole, nie wypełnienie. */
   /* Sekcja z tarasem. Orzech był tam jedynym ciemnym pasem i w systemie
-     len-plus-czerwień czytał się mętnie — nie rozmawiał z niczym innym.
+     len-plus-czerwień czytał się mętnie, nie rozmawiał z niczym innym.
      Wybrana oliwka: powtarza boazerię ze zdjęcia użytego w tej właśnie sekcji,
-     a czerwień występuje już jako wielka płaszczyzna w hero — drugi taki pas
+     a czerwień występuje już jako wielka płaszczyzna w hero, drugi taki pas
      przechyliłby system w monotonię. Powrót na czerwień: var(--c-accent-fill). */
   --c-bg-feature:  var(--p-oliva);
 
@@ -230,7 +230,7 @@ button { font: inherit; color: inherit; }
   white-space: nowrap;
 }
 
-/* Markiza — pionowe pasy pomidora i bazylii, jak płótno nad wejściem
+/* Markiza: pionowe pasy pomidora i bazylii, jak płótno nad wejściem
    do knajpy. Podstawowy separator sekcji. */
 .stripe-band {
   height: 18px;
@@ -244,7 +244,7 @@ button { font: inherit; color: inherit; }
   border-block: 2px solid var(--c-ink);
 }
 
-/* Szachownica — ukłon w stronę obrusu. Używana oszczędnie. */
+/* Szachownica: ukłon w stronę obrusu. Używana oszczędnie. */
 .checker-band {
   height: 26px;
   background-color: var(--c-accent-fill);
@@ -255,7 +255,7 @@ button { font: inherit; color: inherit; }
   background-position: 0 0, 13px 13px;
 }
 
-/* Podwójny hairline w pomidorze — chwyt prosto z retro etykiety. */
+/* Podwójny hairline w pomidorze, chwyt prosto z retro etykiety. */
 .rule-double {
   border: 0;
   height: 7px;
@@ -265,7 +265,7 @@ button { font: inherit; color: inherit; }
   background: transparent;
 }
 
-/* Skrypt — tylko do sygnatur i nagłówków działów karty. */
+/* Skrypt: tylko do sygnatur i nagłówków działów karty. */
 .script {
   font-family: var(--font-script);
   font-weight: 400;
@@ -360,7 +360,7 @@ button { font: inherit; color: inherit; }
 
 .site-header__inner {
   /* Marka jest wyjęta z układu (pozycja bezwzględna), więc wysokość paska
-     nie zależy od pieczęci — pieczęć może swobodnie zwisać poniżej. */
+     nie zależy od pieczęci, pieczęć może swobodnie zwisać poniżej. */
   position: relative;
   /* Trzy strefy: nawigacja | zarezerwowany środek | akcje.
      Środkowa kolumna trzyma szerokość pieczęci, więc żadna strefa
@@ -429,7 +429,7 @@ button { font: inherit; color: inherit; }
 
 .site-header__seal {
   /* Pieczęć wychodzi poniżej paska. Ujemny margines dolny sprawia,
-     że nie podnosi jego wysokości — wisi nad treścią jak lakowa pieczęć.
+     że nie podnosi jego wysokości, wisi nad treścią jak lakowa pieczęć.
      Kremowy pierścień oddziela ją od czerwieni hero pod spodem. */
   width: var(--seal-size); height: var(--seal-size);
   padding: 0;
@@ -438,7 +438,7 @@ button { font: inherit; color: inherit; }
   /* Rysunek wypełnia koło do krawędzi. Obrys przylega do niego z zewnątrz:
      najpierw ciemna kreska tej samej grubości co ta pod paskiem, potem
      kremowa obwódka oddzielająca pieczęć od czerwieni hero. Zewnętrzny
-     ciemny obrys rysuje ::after na .site-header__brand — tylko na zwisie. */
+     ciemny obrys rysuje ::after na .site-header__brand, tylko na zwisie. */
   box-shadow: 0 0 0 2px var(--c-ink), 0 0 0 9px var(--c-bg-nav);
   position: relative;
   z-index: 2;
@@ -478,7 +478,7 @@ button { font: inherit; color: inherit; }
   flex-shrink: 0;
 }
 
-/* Wszystkie kontrolki paska mają jedną wysokość — inaczej lewa i prawa
+/* Wszystkie kontrolki paska mają jedną wysokość, inaczej lewa i prawa
    strona wyglądają jak z dwóch różnych projektów. */
 .site-header .button,
 .nav-toggle,
@@ -488,7 +488,7 @@ button { font: inherit; color: inherit; }
   padding-block: 0;
 }
 
-/* Etykieta przycisku nigdy nie łamie się na dwie linie — w węższej
+/* Etykieta przycisku nigdy nie łamie się na dwie linie, w węższej
    prawej strefie „REZERWUJ STOLIK" rozpadało się na dwa wiersze. */
 .site-header .button { white-space: nowrap; }
 
@@ -514,7 +514,7 @@ button { font: inherit; color: inherit; }
   font-weight: 600;
   letter-spacing: 0.06em;
   cursor: pointer;
-  /* 0.6 dawało efektywnie ok. 4,0:1 na zielonym pasku — poniżej progu AA */
+  /* 0.6 dawało efektywnie ok. 4,0:1 na zielonym pasku, poniżej progu AA */
   opacity: 0.75;
 }
 .lang-switch button[aria-pressed="true"] {
@@ -529,7 +529,7 @@ button { font: inherit; color: inherit; }
    7. HERO
    ========================================================= */
 /* Hero: po lewej pomidorowy klin ścięty po skosie, po prawej
-   zdjęcie wychodzące na krawędź ekranu — bez ramki i bez zaokrągleń. */
+   zdjęcie wychodzące na krawędź ekranu, bez ramki i bez zaokrągleń. */
 .hero {
   padding: 0;
   display: grid;
@@ -542,7 +542,7 @@ button { font: inherit; color: inherit; }
 
 .hero__wedge {
   position: relative;
-  z-index: 4;   /* treść klina zawsze nad ozdobnikami — te wychodzą zza czerwieni */
+  z-index: 4;   /* treść klina zawsze nad ozdobnikami, te wychodzą zza czerwieni */
   background: var(--c-accent-fill);
   color: var(--c-bg);
   padding: clamp(6.25rem, 8vw, 10rem) var(--gutter) clamp(3rem, 6vw, 5rem);
@@ -552,7 +552,7 @@ button { font: inherit; color: inherit; }
 }
 @media (min-width: 900px) {
   .hero__wedge {
-    /* ukośne ścięcie prawej krawędzi — klin z referencji */
+    /* ukośne ścięcie prawej krawędzi, klin z referencji */
     clip-path: polygon(0 0, 100% 0, calc(100% - 90px) 100%, 0 100%);
     padding-right: calc(var(--gutter) + 90px);
     padding-left: max(var(--gutter), calc((100vw - var(--content-max)) / 2 + var(--gutter)));
@@ -606,7 +606,7 @@ button { font: inherit; color: inherit; }
   width: clamp(94px, 13vw, 132px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: var(--c-accent);   /* ciemniejszy fiolet — biały tekst 7,5:1 */
+  background: var(--c-accent);   /* ciemniejszy fiolet, biały tekst 7,5:1 */
   color: #fff;
   display: grid;
   place-content: center;
@@ -667,7 +667,7 @@ button { font: inherit; color: inherit; }
   font-size: 1.75rem;
   flex-shrink: 0;
 }
-/* Na barwnym pasie obręcze dziedziczą kolor tekstu sekcji — czerwona
+/* Na barwnym pasie obręcze dziedziczą kolor tekstu sekcji, czerwona
    obręcz na oliwce miałaby 1,4:1 i po prostu by zniknęła. */
 
 .stamp__text {
@@ -763,7 +763,7 @@ html[lang="en"] [data-only="pl"] { display: none; }
   color: var(--c-on-dark);
 }
 
-/* Bez JS wszystkie panele są widoczne — menu musi być w całości
+/* Bez JS wszystkie panele są widoczne, menu musi być w całości
    czytelne i indeksowalne. Ukrywanie włącza dopiero skrypt przez .js */
 .menu__panel + .menu__panel { margin-top: var(--space-8); }
 .js .menu__panel[hidden] { display: none; }
@@ -844,7 +844,7 @@ html[lang="en"] [data-only="pl"] { display: none; }
   line-height: 1.45;
 }
 
-/* angielski opis kursywą pod polskim — dokładnie jak w drukowanej karcie */
+/* angielski opis kursywą pod polskim, dokładnie jak w drukowanej karcie */
 .dish__desc--en {
   font-family: var(--font-serif);
   font-style: italic;
@@ -859,7 +859,7 @@ html[lang="en"] [data-only="pl"] { display: none; }
   margin-top: var(--space-2);
 }
 
-/* Tekst znaczników jest zawsze w kolorze tuszu — barwne tło samo
+/* Tekst znaczników jest zawsze w kolorze tuszu, barwne tło samo
    rozróżnia kategorie, a kolorowy tekst na jasnym tincie schodził
    do ok. 3:1 przy rozmiarze 10px. */
 .tag {
@@ -880,7 +880,7 @@ html[lang="en"] [data-only="pl"] { display: none; }
   background: color-mix(in srgb, #B5623F 35%, transparent);
 }
 
-/* zwijana pełna karta alkoholi — <details> działa bez JS */
+/* zwijana pełna karta alkoholi, <details> działa bez JS */
 .spirits {
   margin-top: var(--space-8);
   border: 1px solid var(--c-line);
@@ -989,7 +989,7 @@ html[lang="en"] [data-only="pl"] { display: none; }
 .feature .section__eyebrow { color: var(--c-on-dark); }
 .feature p { color: color-mix(in srgb, var(--c-on-dark) 82%, transparent); }
 
-/* Czerwony przycisk miałby tu 1,0:1 na czerwieni i 1,4:1 na oliwce —
+/* Czerwony przycisk miałby tu 1,0:1 na czerwieni i 1,4:1 na oliwce,
    w obu wariantach tła rezerwacja musi być kremowa. */
 .feature .button--primary {
   background: var(--c-on-dark);
@@ -1034,7 +1034,7 @@ html[lang="en"] [data-only="pl"] { display: none; }
   object-fit: cover;
 }
 
-/* Czerwony przycisk na czerwonym tle nie zadziała — jak w sekcji tarasu. */
+/* Czerwony przycisk na czerwonym tle nie zadziała, jak w sekcji tarasu. */
 .section--red .button--primary {
   background: var(--c-on-dark);
   color: var(--c-accent-solid);
@@ -1103,7 +1103,7 @@ html[lang="en"] [data-only="pl"] { display: none; }
   display: block;
 }
 
-/* Atrapa mapy — zajmuje to samo miejsce co ramka, więc jej podmiana
+/* Atrapa mapy: zajmuje to samo miejsce co ramka, więc jej podmiana
    nie przesuwa układu. */
 .map-facade {
   min-height: 340px;
@@ -1177,8 +1177,8 @@ html[lang="en"] [data-only="pl"] { display: none; }
 .site-footer a { text-decoration: none; }
 .site-footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-/* wielki wordmark na całą szerokość — zamknięcie strony */
-/* Skrypt nad wordmarkiem — podpis nad szyldem. */
+/* wielki wordmark na całą szerokość, zamknięcie strony */
+/* Skrypt nad wordmarkiem, podpis nad szyldem. */
 .footer-script {
   margin: clamp(2rem, 5vw, 3.5rem) 0 -0.12em;
   text-align: center;
@@ -1189,7 +1189,7 @@ html[lang="en"] [data-only="pl"] { display: none; }
   rotate: -2deg;
 }
 
-/* Jedna linia wypełniająca szerokość ekranu — rozmiar liczony z vw,
+/* Jedna linia wypełniająca szerokość ekranu, rozmiar liczony z vw,
    żeby wordmark zawsze sięgał obu krawędzi i nigdy się nie łamał. */
 .footer-wordmark {
   display: block;
@@ -1250,7 +1250,7 @@ html[lang="en"] [data-only="pl"] { display: none; }
     padding-bottom: var(--space-4);
     border-top: 1px solid color-mix(in srgb, var(--c-nav-ink) 25%, transparent);
   }
-  /* Panel rozwijany pod paskiem zamiast drugiego rzędu w środku paska —
+  /* Panel rozwijany pod paskiem zamiast drugiego rzędu w środku paska,
      dzięki temu otwarcie nawigacji nie zmienia wysokości nagłówka. */
   .site-nav {
     position: absolute;
@@ -1284,7 +1284,7 @@ html[lang="en"] [data-only="pl"] { display: none; }
 
   /* Przy 375 px suma szerokości nie mieściła się w pasku i przełącznik
      języka wyjeżdżał poza ekran. Skracamy wszystkie trzy elementy:
-     wordmark traci „Trattoria", a przycisk nawigacji — słowo na rzecz kresek. */
+     wordmark traci „Trattoria", a przycisk nawigacji traci słowo na rzecz kresek. */
   .site-header__inner { min-height: 4.5rem; --seal-space: 118px; }
   .site-header__brand { --seal-size: 88px; --seal-drop: 34px; }
 

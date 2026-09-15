@@ -1,4 +1,4 @@
-# Wersja demonstracyjna — strona nie jest jeszcze zatwierdzona przez klienta.
+# Wersja demonstracyjna, strona nie jest jeszcze zatwierdzona przez klienta.
 #
 # UWAGA: na GitHub Pages w podkatalogu (kexiis.github.io/mamma-mia/) ten plik
 # jest przez roboty IGNOROWANY. Czytają wyłącznie robots.txt z korzenia domeny,

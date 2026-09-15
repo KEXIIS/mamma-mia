@@ -1,5 +1,5 @@
 /* =========================================================
-   TRATTORIA MAMMA MIA — interakcje
+   TRATTORIA MAMMA MIA, interakcje
    Wszystko jest progresywnym ulepszeniem: przy wyłączonym
    JavaScripcie strona zostaje po polsku, a całe menu pozostaje
    widoczne (patrz reguła `.js .menu__panel[hidden]` w CSS).
@@ -19,7 +19,7 @@
 
   function zapamietajPolski() {
     document.querySelectorAll("[data-en]").forEach(function (el) {
-      // Podmieniamy wyłącznie czysty tekst — element z dziećmi
+      // Podmieniamy wyłącznie czysty tekst, element z dziećmi
       // zostałby zniszczony przez przypisanie do textContent.
       if (el.children.length > 0) return;
       el.dataset.pl = el.textContent.trim();
@@ -51,7 +51,7 @@
     try {
       localStorage.setItem(KLUCZ, jezyk);
     } catch (e) {
-      /* tryb prywatny — wybór po prostu nie przetrwa odświeżenia */
+      /* tryb prywatny, wybór po prostu nie przetrwa odświeżenia */
     }
   }
 
@@ -78,7 +78,7 @@
      2. Zakładki menu
 
      Wszystkie panele są w HTML i domyślnie widoczne. Dopiero
-     tutaj chowamy nieaktywne — dzięki temu bez JS nic nie ginie.
+     tutaj chowamy nieaktywne, dzięki temu bez JS nic nie ginie.
      --------------------------------------------------------- */
   var zakladki = Array.prototype.slice.call(document.querySelectorAll(".menu__tab"));
 
@@ -152,8 +152,8 @@
       ramka.className = "map";
       ramka.src = atrapaMapy.dataset.mapa;
       ramka.title = document.documentElement.lang === "en"
-        ? "Map — Karmelicka 14, Cracow"
-        : "Mapa — Karmelicka 14, Kraków";
+        ? "Map, Karmelicka 14, Cracow"
+        : "Mapa, Karmelicka 14, Kraków";
       ramka.loading = "lazy";
       ramka.referrerPolicy = "no-referrer-when-downgrade";
       atrapaMapy.replaceWith(ramka);
