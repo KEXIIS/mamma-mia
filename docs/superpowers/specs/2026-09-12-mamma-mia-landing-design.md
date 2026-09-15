@@ -708,3 +708,20 @@ na starej stronie nie napisano wprost, więc blok zniknął razem z regułami CS
 Transkrypcja stopki zostaje w `docs/menu-transkrypcja.md`, gdyby treść miała
 wrócić po potwierdzeniu przez klienta. Warto pamiętać, że razem z blokiem znikła
 informacja o karcie alergenów, przydatna gościom z alergiami.
+
+### 9b. Drobny druk przywrócony i uzupełniony
+
+Klient przysłał skany obu aktualnych kart. Porównanie pozycja po pozycji pokazało
+zero rozbieżności w cenach i gramaturach: 48 dań, 10 koktajli i mocktaili, 18 win,
+13 piw, 12 napojów gorących, 12 zimnych, 41 alkoholi mocnych i 2 pozycje grappy.
+
+Skany pokazały też, że drobny druk usunięty w sekcji 9a jest wydrukowany na spodzie
+aktualnej karty dań. Nie była to więc treść przestarzała ani wymyślona, tylko
+warunki, które restauracja realnie stosuje. Blok `.menu__fineprint` wrócił w całości.
+
+Doszedł czwarty akapit, którego wcześniej nie było nigdzie: przypis z karty alkoholi
+o tym, że informacje o objętościowej zawartości alkoholu są u managera restauracji.
+
+Różnice w nazwach handlowych zostawione bez zmian. Karta skraca niektóre nazwy
+(„Tanqueray Sevilla", „Czternastka – pils", „Tanqueray no. 10"), strona podaje pełne
+nazwy produktów. Karta ma też prawdopodobną literówkę „Pink Pink Aromatic Berry".

@@ -921,6 +921,17 @@ html[lang="en"] [data-only="pl"] { display: none; }
   font-weight: 600;
 }
 
+/* drobny druk z końca karty */
+.menu__fineprint {
+  margin-top: var(--space-8);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--c-line-soft);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: var(--c-ink-soft);
+  max-width: 78ch;
+}
+.menu__fineprint p { margin: 0 0 var(--space-2); }
 
 /* =========================================================
    11. GALERIA
