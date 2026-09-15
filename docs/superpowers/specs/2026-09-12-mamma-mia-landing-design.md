@@ -592,3 +592,32 @@ oryginały istnieją. Warto o nie poprosić razem z potwierdzeniem cen i praw do
   ale przy wdrożeniu warto to potwierdzić, bo mógł je robić zewnętrzny fotograf.
 - **Rozmiar `index.html`.** ~89 KB to dużo jak na statyczną stronę; gdyby menu urosło
   dwukrotnie, wariant C (generator) przestaje być przesadą.
+
+### 8e. Miękki kadr bohatera — przyczyna była w proporcjach, nie w kompresji
+
+Po wprowadzeniu wariantów 1600 px (sekcja 8d) zdjęcie w sekcji bohatera nadal
+wyglądało na rozpikselizowane. Pomiar w przeglądarce wyjaśnił dlaczego: kontener
+ma około 617×746 px, czyli jest niemal pionowy, a stało w nim zdjęcie o proporcji
+3:1. `object-fit: cover` skaluje kadr tak, aby wypełnił krótszy wymiar, więc plik
+był powiększany 1,29× — i to powiększenie nakładało się na wcześniejsze programowe
+powiększenie z 960 px. Dwa upscale'e jeden na drugim dają dokładnie ten efekt,
+który klient zgłosił.
+
+Sprawdziliśmy jeszcze raz, czy stara strona ma lepsze źródła. Ścieżka
+`photos/galerie/21/<id>.jpg` (bez segmentu rozmiaru) zwraca pełne pliki, ale mają
+one 549×823 px, a kadry wnętrz `photos/topy/66/<id>.jpg` kończą się na 960×333.
+Lepszych oryginałów w serwisie nie ma.
+
+Rozwiązaniem było dopasowanie kształtu, a nie rozdzielczości. W sekcji bohatera
+stoi teraz pionowe zdjęcie stolika (makaron z burratą, wino, miedziany dzbanek),
+którego proporcje odpowiadają ramce — przeglądarka je **pomniejsza** (współczynnik
+0,69), więc kadr jest ostry z definicji. Wariant 1098 px dla ekranów gęstych waży
+70 kB, czyli o połowę mniej niż poprzedni plik 1600 px. Zwolniony kadr wnętrza
+trafił do galerii, gdzie kafelek ma 352×300 px i również oznacza pomniejszenie.
+
+Przy okazji `.hero__photo img` dostał `position: absolute; inset: 0`. Bez tego
+proporcje nowego, pionowego pliku rozpychały wiersz siatki o blisko 200 px.
+
+Wniosek na przyszłość: zanim doda się kolejny wariant `srcset`, warto zmierzyć
+stosunek ramki do kadru. Powiększanie zdjęcia, które po prostu ma złe proporcje,
+jest leczeniem objawu.
