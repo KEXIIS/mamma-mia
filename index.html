@@ -21,7 +21,9 @@
   <meta property="og:description" content="Pizza z pieca, świeża pasta i karta win w sercu Krakowa. Menu, godziny i rezerwacja online.">
   <meta property="og:image" content="images/wnetrze-1.webp">
 
-  <link rel="preload" as="image" href="images/wnetrze-1.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/wnetrze-1.webp"
+        imagesrcset="images/wnetrze-1.webp 960w, images/wnetrze-1-1600.webp 1600w"
+        imagesizes="(min-width: 900px) 130vw, 100vw" fetchpriority="high">
   <meta property="og:locale" content="pl_PL">
 
   <link rel="icon" href="images/favicon.png" sizes="64x64">
@@ -34,7 +36,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/archivo-wght-latin-ext.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/yellowtail-400-latin.woff2" crossorigin>
 
-  <link rel="stylesheet" href="css/style.css?v=52">
+  <link rel="stylesheet" href="css/style.css?v=54">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -117,9 +119,20 @@
 
       <figure class="hero__photo">
 
+        <!-- Dwa warianty: telefon bierze lekki plik 960 px, szerokie ekrany
+             ostrzejszy 1600 px. Źródło ma 960x333, więc większy wariant jest
+             powiększony programowo (Lanczos + wyostrzenie) — lepiej to zrobić
+             raz na etapie przygotowania niż zostawiać skalowanie przeglądarce.
+
+             sizes celowo przekracza realną szerokość kolumny. Kadr ma
+             proporcje 3:1, a kontener jest niemal kwadratowy, więc
+             object-fit: cover przycina go i o doborze pliku decyduje
+             wysokość, której sizes nie potrafi wyrazić. -->
         <img src="images/wnetrze-1.webp"
+             srcset="images/wnetrze-1.webp 960w, images/wnetrze-1-1600.webp 1600w"
+             sizes="(min-width: 900px) 130vw, 100vw"
              alt="Wnętrze Trattorii Mamma Mia — stolik przy oliwkowej boazerii, gięte krzesła i lodówka na wino"
-             width="938" height="310" fetchpriority="high">
+             width="1600" height="555" fetchpriority="high">
 
         <p class="sticker">
           <span class="sticker__score">4,4</span>
@@ -199,8 +212,10 @@
 
     <figure class="band">
       <img src="images/wnetrze-2.webp"
+           srcset="images/wnetrze-2.webp 960w, images/wnetrze-2-1600.webp 1600w"
+           sizes="100vw"
            alt="Sala restauracji z kwiecistą tapetą, drewnianymi stolikami i regałem z winem"
-           width="938" height="310" loading="lazy">
+           width="1600" height="555" loading="lazy">
       <p class="band__label" data-en="Straight from the oven">Prosto z pieca</p>
     </figure>
 
@@ -1470,8 +1485,10 @@
 
         <div class="feature__media">
           <img src="images/wnetrze-3.webp"
+               srcset="images/wnetrze-3.webp 960w, images/wnetrze-3-1600.webp 1600w"
+               sizes="(min-width: 900px) 95vw, 100vw"
                alt="Wnętrze restauracji — ceglana ściana, gięte krzesła i żółte tulipany na stole"
-               width="938" height="310" loading="lazy">
+               width="1600" height="555" loading="lazy">
         </div>
 
         <div>
@@ -1678,6 +1695,6 @@
   }
   </script>
 
-  <script src="js/script.js?v=52" defer></script>
+  <script src="js/script.js?v=54" defer></script>
 </body>
 </html>

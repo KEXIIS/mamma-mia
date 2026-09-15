@@ -552,6 +552,30 @@ docelowy klienta.
 **Uwaga o wyniku SEO:** spadł do 63, bo blokujemy indeksowanie meta tagiem (8b). To koszt
 wersji demonstracyjnej, nie usterka — po usunięciu blokady wraca do 100.
 
+## 8d. Rozdzielczość zdjęć wnętrz
+
+Zdjęcia wnętrz były widocznie rozmyte. Przyczyną nie była kompresja, tylko **rozciąganie**:
+źródło ma proporcje 3:1 (960×333), a kontenery są niemal kwadratowe, więc `object-fit: cover`
+przycina kadr i skaluje go w hero **2,55×**, a w pełnoszerokim paśmie 1,70×.
+
+Stara strona nie ma lepszych źródeł. Pełne pliki leżą pod ścieżką bez segmentu rozmiaru
+(`photos/topy/66/{id}.jpg` zamiast `photos/topy/66/938x310/{id}.jpg`), ale mają tylko
+960×333 zamiast 938×310 — różnica bez znaczenia. Zdjęcia dań nie mają wariantu większego
+niż 549×823.
+
+Rozwiązanie doraźne: warianty `-1600.webp` powiększone Lanczosem z delikatnym wyostrzeniem.
+**To nie dodaje detalu**, ale wypada wyraźnie lepiej niż naiwne skalowanie w przeglądarce —
+krawędzie mebli i listew są czytelne zamiast rozmazanych. Podpięte przez `srcset`, więc telefon
+pobiera lekki plik (44–49 KB), a szerokie ekrany ostry (138–156 KB).
+
+**Pułapka przy `sizes`:** atrybut opisuje szerokość, a o doborze pliku decyduje tu wysokość
+kontenera po przycięciu. Przy szczerym `sizes="50vw"` przeglądarka wybierała mały plik mimo
+trzykrotnego rozciągnięcia. Wartości są więc celowo zawyżone (130vw dla hero, 95vw dla sekcji
+tarasu) i wymagają komentarza w znacznikach, bo wyglądają na błąd.
+
+**Właściwe rozwiązanie to pliki od klienta.** Zdjęcia dań są robione profesjonalnie, więc
+oryginały istnieją. Warto o nie poprosić razem z potwierdzeniem cen i praw do zdjęć.
+
 ## 9. Świadomie pominięte
 
 - formularz rezerwacji (CoverManager już działa)
