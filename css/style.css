@@ -386,13 +386,34 @@ button { font: inherit; color: inherit; }
 .site-header__actions { grid-column: 3; justify-self: end; }
 
 .site-header__brand {
+  --seal-size: 132px;
+  --seal-drop: 52px;          /* zwis pod krawędź paska */
   position: absolute;
   left: 50%;
-  bottom: -52px;              /* zwis pod krawędź paska */
+  bottom: calc(-1 * var(--seal-drop));
   transform: translateX(-50%);
   display: flex;
   align-items: center;
   text-decoration: none;
+}
+
+/* Ciemny obrys tylko na wystającej części pieczęci. Pierścień jest pełnym
+   kołem, ale clip-path odcina wszystko powyżej dolnej krawędzi paska, więc
+   kreska zaczyna się dokładnie tam, gdzie kończy się kreska pod paskiem.
+   Górna krawędź cięcia liczona w układzie pierścienia: krawędź paska leży
+   (seal-size - seal-drop) poniżej góry pieczęci, a pierścień startuje 11 px
+   wyżej od niej. */
+.site-header__brand::after {
+  content: "";
+  position: absolute;
+  top: -11px;
+  left: -11px;
+  width: calc(var(--seal-size) + 22px);
+  height: calc(var(--seal-size) + 22px);
+  border: 2px solid var(--c-ink);
+  border-radius: 50%;
+  clip-path: inset(calc(var(--seal-size) - var(--seal-drop) + 11px) 0 0 0);
+  pointer-events: none;
 }
 
 /* Napis znika z paska: wycentrowana pieczęć niesie nazwę w otoku,
@@ -410,18 +431,15 @@ button { font: inherit; color: inherit; }
   /* Pieczęć wychodzi poniżej paska. Ujemny margines dolny sprawia,
      że nie podnosi jego wysokości — wisi nad treścią jak lakowa pieczęć.
      Kremowy pierścień oddziela ją od czerwieni hero pod spodem. */
-  width: 132px; height: 132px;
+  width: var(--seal-size); height: var(--seal-size);
   padding: 0;
   border: 0;
   background: var(--c-bg-nav);
   /* Rysunek wypełnia koło do krawędzi. Obrys przylega do niego z zewnątrz:
-     ciemna kreska tej samej grubości co ta pod paskiem, kremowa obwódka
-     oddzielająca pieczęć od czerwieni hero, a na końcu druga ciemna kreska,
-     która domyka pierścień i utrzymuje kształt także na jasnym tle. */
-  box-shadow:
-    0 0 0 2px var(--c-ink),
-    0 0 0 9px var(--c-bg-nav),
-    0 0 0 11px var(--c-ink);
+     najpierw ciemna kreska tej samej grubości co ta pod paskiem, potem
+     kremowa obwódka oddzielająca pieczęć od czerwieni hero. Zewnętrzny
+     ciemny obrys rysuje ::after na .site-header__brand — tylko na zwisie. */
+  box-shadow: 0 0 0 2px var(--c-ink), 0 0 0 9px var(--c-bg-nav);
   position: relative;
   z-index: 2;
   border-radius: 50%;
@@ -1231,8 +1249,7 @@ html[lang="en"] [data-only="pl"] { display: none; }
   html { scroll-padding-top: 5.75rem; }
 
   .site-header__inner { min-height: 5rem; --seal-space: 148px; }
-  .site-header__brand { bottom: -44px; }
-  .site-header__seal { width: 112px; height: 112px; }
+  .site-header__brand { --seal-size: 112px; --seal-drop: 44px; }
 
   .nav-toggle {
     display: inline-flex;
@@ -1296,8 +1313,7 @@ html[lang="en"] [data-only="pl"] { display: none; }
      języka wyjeżdżał poza ekran. Skracamy wszystkie trzy elementy:
      wordmark traci „Trattoria", a przycisk nawigacji — słowo na rzecz kresek. */
   .site-header__inner { min-height: 4.5rem; --seal-space: 118px; }
-  .site-header__brand { bottom: -34px; }
-  .site-header__seal { width: 88px; height: 88px; }
+  .site-header__brand { --seal-size: 88px; --seal-drop: 34px; }
 
 
   .nav-toggle { padding: 0.5rem 0.6rem; }
