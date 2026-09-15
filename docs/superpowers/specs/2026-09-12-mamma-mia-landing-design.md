@@ -693,3 +693,18 @@ Zachowane fakty spoza materiału klienta, pochodzące z profilu biznesowego:
 przynależność do niezależnej grupy z La Campaną i Koglem-Moglem, brak franczyzy
 i kuchni centralnej, taras na dziedzińcu. Zachowane też obie prawdziwe opinie
 z Google — restauracja nie cytuje samej siebie.
+
+### 9a. Drobny druk z karty usunięty
+
+Blok `.menu__fineprint` pod kartą zawierał stopkę drukowanego menu: czas
+oczekiwania około 45 minut, serwis od 12,5% do 17%, kartę alergenów u managera,
+pół porcji za 60% ceny, ostrzeżenie o śladowych ilościach glutenu i opłatę 2 zł
+za opakowanie przy zamówieniu na wynos.
+
+Treść pochodziła ze skanów karty publikowanych na starej stronie, ale nie było
+jej w tekście żadnej podstrony. Klient poprosił o usunięcie wszystkiego, czego
+na starej stronie nie napisano wprost, więc blok zniknął razem z regułami CSS.
+
+Transkrypcja stopki zostaje w `docs/menu-transkrypcja.md`, gdyby treść miała
+wrócić po potwierdzeniu przez klienta. Warto pamiętać, że razem z blokiem znikła
+informacja o karcie alergenów, przydatna gościom z alergiami.
