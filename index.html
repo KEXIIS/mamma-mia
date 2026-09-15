@@ -36,7 +36,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/archivo-wght-latin-ext.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/yellowtail-400-latin.woff2" crossorigin>
 
-  <link rel="stylesheet" href="css/style.css?v=59">
+  <link rel="stylesheet" href="css/style.css?v=60">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -206,28 +206,7 @@
       </div>
     </section>
 
-    <!-- Tryptyk zamiast jednego kadru na całą szerokość. Materiał źródłowy ma
-         960 px, a pełna szerokość okna to przy 1440 px około 1425 px — kadr był
-         powiększany półtora raza. Kafelek ma trzeciá tej szerokości, więc pracuje
-         blisko rozdzielczości własnej. -->
-    <figure class="band">
-      <img src="images/wnetrze-2.webp"
-           srcset="images/wnetrze-2.webp 960w, images/wnetrze-2-1920.webp 1920w"
-           sizes="(min-width: 700px) 34vw, 100vw"
-           alt="Sala restauracji z kwiecistą tapetą, drewnianymi stolikami i regałem z winem"
-           width="960" height="333" loading="lazy">
-      <img src="images/wnetrze-1.webp"
-           srcset="images/wnetrze-1.webp 960w, images/wnetrze-1-1920.webp 1920w"
-           sizes="(min-width: 700px) 34vw, 100vw"
-           alt="Stolik przy oliwkowej boazerii, gięte krzesła i lodówka na wino"
-           width="960" height="333" loading="lazy">
-      <img src="images/wnetrze-3.webp"
-           srcset="images/wnetrze-3.webp 960w, images/wnetrze-3-1920.webp 1920w"
-           sizes="(min-width: 700px) 34vw, 100vw"
-           alt="Ceglana ściana, gięte krzesła i żółte tulipany na stole"
-           width="960" height="333" loading="lazy">
-      <p class="band__label" data-en="Straight from the oven">Prosto z pieca</p>
-    </figure>
+    <div class="stripe-band" aria-hidden="true"></div>
 
     <section class="section section--alt" id="menu">
       <div class="container">

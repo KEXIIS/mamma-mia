@@ -665,3 +665,14 @@ Trzy zmiany:
 Po zmianie żadne zdjęcie na stronie nie jest powiększane. Zmierzone współczynniki
 przy 1440 px: logo 0,50, bohater 0,63, piec 0,93, kafelki pasa 0,96, galeria 0,98,
 taras 0,93, bony 0,79.
+
+### 8h. Pas „Prosto z pieca" usunięty
+
+Pas zniknął ze strony wraz z regułami `.band` i `.band__label`. W jego miejscu
+stoi markiza, więc rytm sekcji pozostaje bez zmian: „O nas" — markiza — menu.
+
+Wraz z pasem z repozytorium wyleciały wszystkie kadry wnętrz
+(`wnetrze-{1,2,3}.webp` i warianty `-1920`), bo nie miały już żadnego odwołania.
+W katalogu `images/` zostaje dziewięć plików, wszystkie używane. Materiał EDSR
+opisany w sekcji 8f jest tym samym nieaktualny dla tej strony — zostaje
+w dokumentacji jako notatka metodyczna.

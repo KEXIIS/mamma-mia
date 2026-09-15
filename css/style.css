@@ -936,53 +936,6 @@ html[lang="en"] [data-only="pl"] { display: none; }
 /* =========================================================
    11. GALERIA
    ========================================================= */
-/* Pełnoszerokie pasmo zdjęciowe z etykietą wchodzącą na kadr
-   od prawej krawędzi — chwyt „NEW ARRIVALS" z referencji. */
-.band {
-  position: relative;
-  margin: 0;
-  overflow: hidden;
-  border-block: 3px solid var(--c-ink);
-}
-/* Trzy kadry obok siebie. Kafelek ma okolo jednej trzeciej szerokosci okna,
-   wiec zdjecie 960 px pracuje blisko wlasnej rozdzielczosci zamiast byc
-   rozciagane na cala szerokosc. Ponizej 700 px zostaje sam pierwszy kadr —
-   trzy waskie paski nie mialyby czytelnej tresci. */
-.band {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3px;
-  background: var(--c-ink);
-}
-@media (min-width: 700px) {
-  .band { grid-template-columns: repeat(3, 1fr); }
-}
-.band img {
-  width: 100%;
-  /* Gorna granica 320 px, bo kadr ma 333 px wysokosci. Powyzej tej wartosci
-     object-fit zaczalby powiekszac zdjecie i wracalaby miekkosc. */
-  height: clamp(200px, 26vw, 320px);
-  object-fit: cover;
-  display: block;
-}
-@media (max-width: 699px) {
-  .band img:nth-of-type(n + 2) { display: none; }
-}
-.band__label {
-  position: absolute;
-  right: 0;
-  bottom: clamp(1rem, 4vw, 2.75rem);
-  margin: 0;
-  padding: 0.3em 0.7em 0.3em 1.1em;
-  background: var(--c-accent-fill);
-  color: var(--c-bg);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  font-size: clamp(1.375rem, 4.5vw, 3.25rem);
-}
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
