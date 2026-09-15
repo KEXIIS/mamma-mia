@@ -944,10 +944,29 @@ html[lang="en"] [data-only="pl"] { display: none; }
   overflow: hidden;
   border-block: 3px solid var(--c-ink);
 }
+/* Trzy kadry obok siebie. Kafelek ma okolo jednej trzeciej szerokosci okna,
+   wiec zdjecie 960 px pracuje blisko wlasnej rozdzielczosci zamiast byc
+   rozciagane na cala szerokosc. Ponizej 700 px zostaje sam pierwszy kadr —
+   trzy waskie paski nie mialyby czytelnej tresci. */
+.band {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+  background: var(--c-ink);
+}
+@media (min-width: 700px) {
+  .band { grid-template-columns: repeat(3, 1fr); }
+}
 .band img {
   width: 100%;
-  height: clamp(200px, 30vw, 380px);
+  /* Gorna granica 320 px, bo kadr ma 333 px wysokosci. Powyzej tej wartosci
+     object-fit zaczalby powiekszac zdjecie i wracalaby miekkosc. */
+  height: clamp(200px, 26vw, 320px);
   object-fit: cover;
+  display: block;
+}
+@media (max-width: 699px) {
+  .band img:nth-of-type(n + 2) { display: none; }
 }
 .band__label {
   position: absolute;
@@ -970,8 +989,9 @@ html[lang="en"] [data-only="pl"] { display: none; }
   gap: var(--space-4);
 }
 @media (min-width: 900px) {
-  /* sześć kadrów w dwóch równych rzędach */
-  .gallery { grid-template-columns: repeat(3, 1fr); }
+  /* Cztery kadry w dwóch równych rzędach. Kadry wnętrz przeniosły się
+     do pasa „Prosto z pieca", tu zostają same dania. */
+  .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 .gallery figure {
   margin: 0;

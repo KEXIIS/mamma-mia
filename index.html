@@ -36,7 +36,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/archivo-wght-latin-ext.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/yellowtail-400-latin.woff2" crossorigin>
 
-  <link rel="stylesheet" href="css/style.css?v=57">
+  <link rel="stylesheet" href="css/style.css?v=59">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -206,12 +206,26 @@
       </div>
     </section>
 
+    <!-- Tryptyk zamiast jednego kadru na całą szerokość. Materiał źródłowy ma
+         960 px, a pełna szerokość okna to przy 1440 px około 1425 px — kadr był
+         powiększany półtora raza. Kafelek ma trzeciá tej szerokości, więc pracuje
+         blisko rozdzielczości własnej. -->
     <figure class="band">
       <img src="images/wnetrze-2.webp"
            srcset="images/wnetrze-2.webp 960w, images/wnetrze-2-1920.webp 1920w"
-           sizes="100vw"
+           sizes="(min-width: 700px) 34vw, 100vw"
            alt="Sala restauracji z kwiecistą tapetą, drewnianymi stolikami i regałem z winem"
-           width="1600" height="555" loading="lazy">
+           width="960" height="333" loading="lazy">
+      <img src="images/wnetrze-1.webp"
+           srcset="images/wnetrze-1.webp 960w, images/wnetrze-1-1920.webp 1920w"
+           sizes="(min-width: 700px) 34vw, 100vw"
+           alt="Stolik przy oliwkowej boazerii, gięte krzesła i lodówka na wino"
+           width="960" height="333" loading="lazy">
+      <img src="images/wnetrze-3.webp"
+           srcset="images/wnetrze-3.webp 960w, images/wnetrze-3-1920.webp 1920w"
+           sizes="(min-width: 700px) 34vw, 100vw"
+           alt="Ceglana ściana, gięte krzesła i żółte tulipany na stole"
+           width="960" height="333" loading="lazy">
       <p class="band__label" data-en="Straight from the oven">Prosto z pieca</p>
     </figure>
 
@@ -1462,13 +1476,7 @@
             <img src="images/kaczka.webp" alt="Pierś z kaczki z figami w sosie miodowo-pomarańczowym" width="549" height="824" loading="lazy">
           </figure>
           <figure>
-            <img src="images/pizza-burrata.webp" alt="Pizza z burratą i szynką parmeńską podana na tarasie" width="549" height="824" loading="lazy">
-          </figure>
-          <figure>
             <img src="images/tunczyk.webp" alt="Grillowany stek z tuńczyka w sezamie obok pizzy z burratą" width="549" height="823" loading="lazy">
-          </figure>
-          <figure>
-            <img src="images/wnetrze-1.webp" srcset="images/wnetrze-1.webp 960w, images/wnetrze-1-1920.webp 1920w" sizes="(min-width: 900px) 30vw, 100vw" alt="Wnętrze Trattorii Mamma Mia — stolik przy oliwkowej boazerii i gięte krzesła" width="960" height="333" loading="lazy">
           </figure>
         </div>
       </div>
@@ -1480,11 +1488,9 @@
       <div class="container feature__grid">
 
         <div class="feature__media">
-          <img src="images/wnetrze-3.webp"
-               srcset="images/wnetrze-3.webp 960w, images/wnetrze-3-1920.webp 1920w"
-               sizes="(min-width: 900px) 95vw, 100vw"
-               alt="Wnętrze restauracji — ceglana ściana, gięte krzesła i żółte tulipany na stole"
-               width="1600" height="555" loading="lazy">
+          <img src="images/pizza-burrata.webp"
+               alt="Pizza z burratą i szynką parmeńską podana na tarasie"
+               width="549" height="824" loading="lazy">
         </div>
 
         <div>

@@ -642,3 +642,26 @@ Pliki `wnetrze-{1,2,3}-1600.webp` zastąpione przez `wnetrze-{1,2,3}-1920.webp`
 Uwaga metodologiczna: sieć nadal nie wie, co było na zdjęciu — zgaduje wiarygodnie.
 Zdanie z sekcji 8d pozostaje w mocy: naprawdę dobry wynik dadzą dopiero oryginalne
 pliki od klienta.
+
+### 8g. Koniec z powiększaniem — każdy kadr pracuje poniżej rozdzielczości własnej
+
+Powiększanie, nawet siecią EDSR, dokładało wiarygodne, ale zmyślone piksele.
+Zamiast szukać lepszego algorytmu, ograniczyliśmy miejsce, jakie zdjęcia zajmują,
+tak aby przeglądarka zawsze je pomniejszała. Pomniejszanie jest operacją bezstratną
+percepcyjnie — traci detal, ale nie wprowadza miękkości ani aureoli.
+
+Trzy zmiany:
+
+1. **Pas „Prosto z pieca" stał się tryptykiem.** Zamiast jednego kadru rozciągniętego
+   na 1425 px stoją trzy kafelki po 473 px. Dodatkowo wysokość pasa ma górną granicę
+   320 px, czyli poniżej 333 px wysokości materiału źródłowego — dzięki temu również
+   wymiar pionowy oznacza pomniejszenie. Współczynnik wynosi 0,96.
+2. **Sekcja tarasu dostała pionowe zdjęcie pizzy** (549×824) zamiast kadru wnętrza,
+   który był tam powiększany 1,32×. Kadr pasuje też tematycznie: pizza podana na
+   tarasie. Współczynnik 0,93.
+3. **Galeria zawiera teraz same dania** — cztery kadry w dwóch kolumnach. Kadry wnętrz
+   przeniosły się do pasa.
+
+Po zmianie żadne zdjęcie na stronie nie jest powiększane. Zmierzone współczynniki
+przy 1440 px: logo 0,50, bohater 0,63, piec 0,93, kafelki pasa 0,96, galeria 0,98,
+taras 0,93, bony 0,79.
