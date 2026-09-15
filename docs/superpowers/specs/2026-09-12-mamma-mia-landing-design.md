@@ -676,3 +676,20 @@ Wraz z pasem z repozytorium wyleciały wszystkie kadry wnętrz
 W katalogu `images/` zostaje dziewięć plików, wszystkie używane. Materiał EDSR
 opisany w sekcji 8f jest tym samym nieaktualny dla tej strony — zostaje
 w dokumentacji jako notatka metodyczna.
+
+### 9. Teksty oparte na materiale klienta
+
+Klient dostarczył własny opis restauracji — o tęsknocie za Włochami, o pizzy
+na cienkim cieście z pieca opalanego drewnem, makaronach według włoskich receptur,
+wędlinach i serach z Półwyspu Apenińskiego, oliwie z oliwek pierwszej jakości
+i winach z włoskich winnic. Wszystkie teksty o restauracji zostały na nim oparte.
+
+Zmienione: meta description, og:description, akapit wprowadzający hero, stempel
+o piecu, cała sekcja „O nas" (nowy tytuł „Z tęsknoty za Włochami" i trzy akapity),
+akapit wprowadzający menu oraz akapit sekcji tarasu. Angielskie odpowiedniki
+w atrybutach `data-en` przetłumaczone razem z polskimi.
+
+Zachowane fakty spoza materiału klienta, pochodzące z profilu biznesowego:
+przynależność do niezależnej grupy z La Campaną i Koglem-Moglem, brak franczyzy
+i kuchni centralnej, taras na dziedzińcu. Zachowane też obie prawdziwe opinie
+z Google — restauracja nie cytuje samej siebie.
