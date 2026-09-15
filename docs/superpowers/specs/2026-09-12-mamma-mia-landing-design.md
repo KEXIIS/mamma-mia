@@ -621,3 +621,24 @@ proporcje nowego, pionowego pliku rozpychały wiersz siatki o blisko 200 px.
 Wniosek na przyszłość: zanim doda się kolejny wariant `srcset`, warto zmierzyć
 stosunek ramki do kadru. Powiększanie zdjęcia, które po prostu ma złe proporcje,
 jest leczeniem objawu.
+
+### 8f. Powiększanie sieciowe (EDSR) zamiast Lanczosa
+
+Kadry wnętrz w pasie „Prosto z pieca" i w sekcji tarasu nadal wyglądały miękko.
+Przyczyna była inna niż w sekcji bohatera: tutaj proporcje ramki pasują do zdjęcia,
+ale pas rozciąga się na całą szerokość okna, więc przy 1440 px zajmuje 1425 px,
+a prawdziwy materiał ma tylko 960 px. Wariant 1600 px powiększony Lanczosem nie
+dokładał detalu — dokładał tylko ostre krawędzie z widocznym ringingiem.
+
+Zamiast tego pliki powstają teraz z sieci **EDSR ×2** (`cv2.dnn_superres`,
+model `EDSR_x2.pb`). Wejście 960×333 daje 1920×666 w około 80 sekundach na kadr.
+Po powiększeniu idzie już tylko delikatne wyostrzenie (radius 1,0, percent 40),
+bo sieć zwraca obraz wystarczająco kontrastowy. Porównanie 1:1 na krawędzi blatu
+i oparciach krzeseł pokazuje wyraźnie mniej aureoli niż wariant Lanczosa.
+
+Pliki `wnetrze-{1,2,3}-1600.webp` zastąpione przez `wnetrze-{1,2,3}-1920.webp`
+(129/146/136 kB). Szersza rozdzielczość obsługuje też ekrany o większej gęstości.
+
+Uwaga metodologiczna: sieć nadal nie wie, co było na zdjęciu — zgaduje wiarygodnie.
+Zdanie z sekcji 8d pozostaje w mocy: naprawdę dobry wynik dadzą dopiero oryginalne
+pliki od klienta.
