@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nie ma takiej strony | Trattoria Mamma Mia</title>
+  <meta name="robots" content="noindex">
+
+  <!-- Strona błędu może być podana pod dowolnym zagnieżdżonym adresem, więc
+       ścieżki względne by się rozjechały. Baza jest wyliczana z adresu:
+       na GitHub Pages projekt siedzi w /mamma-mia/, na własnej domenie w /. -->
+  <script>
+    (function () {
+      var base = location.hostname.endsWith("github.io") ? "/mamma-mia/" : "/";
+      document.write('<base href="' + base + '">');
+    })();
+  </script>
+
+  <link rel="icon" href="images/favicon.png" sizes="64x64">
+
+  <style>
+    @font-face {
+      font-family: "Archivo";
+      src: url("fonts/archivo-wght-latin.woff2") format("woff2");
+      font-weight: 100 900;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Yellowtail";
+      src: url("fonts/yellowtail-400-latin.woff2") format("woff2");
+      font-display: swap;
+    }
+
+    :root {
+      --walnut: #321E1E;
+      --linen: #F4F1E0;
+      --pomodoro: #C33A1F;
+      --basilico: #5FA95A;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--pomodoro);
+      color: var(--linen);
+      font-family: "Archivo", system-ui, sans-serif;
+    }
+
+    /* markiza, jak separatory na stronie głównej */
+    .stripes {
+      height: 18px;
+      background: repeating-linear-gradient(90deg,
+        var(--pomodoro) 0 24px, var(--linen) 24px 48px,
+        var(--basilico) 48px 72px, var(--linen) 72px 96px);
+      border-block: 2px solid var(--walnut);
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      padding: 3rem 1.25rem;
+      text-align: center;
+    }
+
+    .seal {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--linen);
+      box-shadow: 0 0 0 2px var(--walnut), 0 0 0 9px var(--linen), 0 0 0 11px var(--walnut);
+      margin: 0 auto 2.5rem;
+      display: block;
+    }
+
+    .script {
+      font-family: "Yellowtail", cursive;
+      font-size: clamp(3rem, 12vw, 6rem);
+      line-height: 0.9;
+      margin: 0;
+      rotate: -5deg;
+      text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.18);
+    }
+
+    h1 {
+      margin: 1.25rem 0 0.75rem;
+      font-size: clamp(1.75rem, 5vw, 3rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+    }
+
+    p {
+      margin: 0 auto 2rem;
+      max-width: 38ch;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.9rem 1.5rem;
+      font-weight: 700;
+      font-size: 0.875rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid var(--linen);
+      border-radius: 4px;
+      color: var(--linen);
+    }
+    .button--solid {
+      background: var(--linen);
+      color: var(--walnut);
+    }
+    .button:hover { box-shadow: 4px 4px 0 var(--walnut); }
+    .button:focus-visible { outline: 3px solid var(--walnut); outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <div class="stripes" aria-hidden="true"></div>
+
+  <main>
+    <div>
+      <img class="seal" src="images/logo.webp" alt="Trattoria Mamma Mia" width="120" height="120">
+
+      <p class="script" aria-hidden="true">Mamma Mia!</p>
+      <h1 data-en="This page isn't on the menu">Tej strony nie ma w karcie</h1>
+      <p data-en="The address may be old or mistyped. Everything you need is on the home page: the full menu, opening hours and bookings.">
+        Adres mógł się zmienić albo wkradła się literówka. Wszystko, czego szukasz,
+        jest na stronie głównej: pełna karta, godziny otwarcia i rezerwacja.
+      </p>
+
+      <div class="actions">
+        <a class="button button--solid" href="./" data-en="Home page">Strona główna</a>
+        <a class="button" href="./#menu" data-en="See the menu">Zobacz kartę</a>
+      </div>
+    </div>
+  </main>
+
+  <div class="stripes" aria-hidden="true"></div>
+
+  <script>
+    (function () {
+      var jezyk;
+      try { jezyk = localStorage.getItem("mammamia-jezyk"); } catch (e) {}
+      if (!jezyk) jezyk = (navigator.language || "pl").toLowerCase().indexOf("pl") === 0 ? "pl" : "en";
+      if (jezyk !== "en") return;
+      document.documentElement.lang = "en";
+      document.title = "Page not found | Trattoria Mamma Mia";
+      document.querySelectorAll("[data-en]").forEach(function (el) {
+        el.textContent = el.dataset.en;
+      });
+    })();
+  </script>
+</body>
+</html>
