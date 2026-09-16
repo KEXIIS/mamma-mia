@@ -639,13 +639,18 @@ button { font: inherit; color: inherit; }
 /* =========================================================
    8. PASEK STEMPLI
    ========================================================= */
+/* Zawsze pełne rzędy: 2 + 2 na wąskich ekranach, 4 w rzędzie od 700 px.
+   auto-fit dawał na iPadzie mini układ 3 + 1. */
 .stamps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-5);
   list-style: none;
   margin: 0;
   padding: 0;
+}
+@media (min-width: 700px) {
+  .stamps { grid-template-columns: repeat(4, 1fr); }
 }
 
 .stamp {
@@ -921,17 +926,54 @@ html[lang="en"] [data-only="pl"] { display: none; }
   font-weight: 600;
 }
 
-/* drobny druk z końca karty */
+/* Drobny druk z karty jako karta informacyjna. Sześć krótkich pozycji
+   z etykietami czyta się szybciej niż trzy gęste akapity. */
 .menu__fineprint {
   margin-top: var(--space-8);
-  padding-top: var(--space-5);
-  border-top: 1px solid var(--c-line-soft);
-  font-size: 0.8125rem;
-  line-height: 1.7;
-  color: var(--c-ink-soft);
-  max-width: 78ch;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 2px solid var(--c-ink);
+  border-radius: var(--radius-card);
+  background: var(--c-bg);
+  box-shadow: 6px 6px 0 var(--c-ink);
 }
-.menu__fineprint p { margin: 0 0 var(--space-2); }
+.menu__fineprint-title {
+  margin: 0 0 var(--space-5);
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  color: var(--c-accent);
+  line-height: 1;
+}
+.menu__fineprint-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5) var(--space-6);
+  margin: 0;
+}
+@media (min-width: 700px) {
+  .menu__fineprint-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1040px) {
+  .menu__fineprint-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.menu__fineprint-grid > div {
+  padding-top: var(--space-3);
+  border-top: 2px solid var(--c-accent-fill);
+}
+.menu__fineprint dt {
+  margin: 0 0 var(--space-2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+}
+.menu__fineprint dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--c-ink-soft);
+}
 
 /* =========================================================
    11. GALERIA
